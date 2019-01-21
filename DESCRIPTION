@@ -1,0 +1,17 @@
+Package: istacr
+Type: Package
+Title: R Package for Obtaining Open Data from Instituto Canario De Estadistica (ISTAC) API
+Version: 0.1.0
+Date: 2019-01-08
+Authors@R: c(
+    person("Instituto Canario de Estadistica", "(ISTAC)", email = "consultas.istac@gobiernodecanarias.org", role = c("aut", "cre"))
+  )
+Maintainer: Instituto Canario de Estadistica (ISTAC) <consultas.istac@gobiernodecanarias.org>
+Description: R package for obtaining open data from Instituto Canario de Estadistica (ISTAC) API.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+  jsonlite,
+  curl
+RoxygenNote: 6.1.1
