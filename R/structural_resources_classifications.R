@@ -7,9 +7,9 @@
 #' @param orderBy (string) Field by which to sort the results.
 #' @param query (string) Query to filter the results.
 #' @examples
-#' get_codelist_families()
+#' get_structuralresources_codelist_families()
 #' @export
-get_codelist_families <- function(limit = 25, offset = 0, orderBy = NULL, query = NULL) {
+get_structuralresources_codelist_families <- function(limit = 25, offset = 0, orderBy = NULL, query = NULL) {
 
   # Parse orderBy
   if (!is.null(orderBy)) {
@@ -38,9 +38,9 @@ get_codelist_families <- function(limit = 25, offset = 0, orderBy = NULL, query 
 #' @description This function allows to obtain a family of classifications in particular.
 #' @param id (string) codelist family identificator
 #' @examples
-#' get_codelist_families_id()
+#' get_structuralresources_codelist_families_id()
 #' @export
-get_codelist_families_id <- function(id = NULL) {
+get_structuralresources_codelist_families_id <- function(id = NULL) {
 
   # Build URL
   api <- "structural-resources"
@@ -61,9 +61,9 @@ get_codelist_families_id <- function(id = NULL) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_codelists()
+#' get_structuralresources_codelists()
 #' @export
-get_codelists <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_codelists <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -97,10 +97,10 @@ get_codelists <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) 
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_codelists_agency("ISTAC")
-#' get_codelists_agency("ESTAT")
+#' get_structuralresources_codelists_agency("ISTAC")
+#' get_structuralresources_codelists_agency("ESTAT")
 #' @export
-get_codelists_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_codelists_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -137,9 +137,9 @@ get_codelists_agency <- function(agencyID, limit = 25, offset = 0, query = NULL,
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_codelists_agency_resource("ISTAC", "CL_AREA_ES")
+#' get_structuralresources_codelists_agency_resource("ISTAC", "CL_AREA_ES")
 #' @export
-get_codelists_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_codelists_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -171,9 +171,9 @@ get_codelists_agency_resource <- function(agencyID, resourceID, limit = 25, offs
 #' @param resourceID (string) Resource identificator.
 #' @param version (string) Specific resource version.
 #' @examples
-#' get_codelists_agency_resource_version("ISTAC", "CL_AREA_ES", "01.000")
+#' get_structuralresources_codelists_agency_resource_version("ISTAC", "CL_AREA_ES", "01.000")
 #' @export
-get_codelists_agency_resource_version <- function(agencyID, resourceID, version) {
+get_structuralresources_codelists_agency_resource_version <- function(agencyID, resourceID, version) {
 
   # Build URL
   api <- "structural-resources"
@@ -203,9 +203,9 @@ get_codelists_agency_resource_version <- function(agencyID, resourceID, version)
 #' @param order (string) Order established for visualization.
 #' @param fields (string) Additional fields that you want to show in the answer.
 #' @examples
-#' get_codelists_agency_resource_version_codes("ISTAC", "CL_AREA_ES", "01.000")
+#' get_structuralresources_codelists_agency_resource_version_codes("ISTAC", "CL_AREA_ES", "01.000")
 #' @export
-get_codelists_agency_resource_version_codes <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL, openness = NULL, order = NULL, fields = NULL) {
+get_structuralresources_codelists_agency_resource_version_codes <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL, openness = NULL, order = NULL, fields = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -243,9 +243,11 @@ get_codelists_agency_resource_version_codes <- function(agencyID, resourceID, ve
 #' @param version (string) Specific resource version.
 #' @param codeID (string) Code identificator.
 #' @examples
-#' get_codelists_agency_resource_version_codes_codeid("ISTAC", "CL_AREA_ES", "01.000", "ES706A01")
+#' get_structuralresources_codelists_agency_resource_version_codes_codeid(
+#'    "ISTAC", "CL_AREA_ES", "01.000", "ES706A01"
+#' )
 #' @export
-get_codelists_agency_resource_version_codes_codeid <- function(agencyID, resourceID, version, codeID) {
+get_structuralresources_codelists_agency_resource_version_codes_codeid <- function(agencyID, resourceID, version, codeID) {
 
   # Build URL
   api <- "structural-resources"

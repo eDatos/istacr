@@ -7,10 +7,10 @@
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_categorisations()
-#' get_categorisations(query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_categorisations()
+#' get_structuralresources_categorisations(query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_categorisations <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_categorisations <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -43,9 +43,9 @@ get_categorisations <- function(limit = 25, offset = 0, query = NULL, orderBy = 
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_categorisations_agency("ISTAC")
+#' get_structuralresources_categorisations_agency("ISTAC")
 #' @export
-get_categorisations_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_categorisations_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -80,9 +80,9 @@ get_categorisations_agency <- function(agencyID, limit = 25, offset = 0, query =
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_categorisations_agency_resource("ISTAC", "cat2")
+#' get_structuralresources_categorisations_agency_resource("ISTAC", "cat2")
 #' @export
-get_categorisations_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_categorisations_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -114,9 +114,9 @@ get_categorisations_agency_resource <- function(agencyID, resourceID, limit = 25
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_categorisations_agency_resource_version("ISTAC", "cat2", "01.000")
+#' get_structuralresources_categorisations_agency_resource_version("ISTAC", "cat2", "01.000")
 #' @export
-get_categorisations_agency_resource_version <- function(agencyID, resourceID, version) {
+get_structuralresources_categorisations_agency_resource_version <- function(agencyID, resourceID, version) {
 
   # Build URL
   api <- "structural-resources"
@@ -137,10 +137,10 @@ get_categorisations_agency_resource_version <- function(agencyID, resourceID, ve
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_category_schemes()
-#' get_category_schemes(query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_category_schemes()
+#' get_structuralresources_category_schemes(query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_category_schemes <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_category_schemes <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -173,9 +173,9 @@ get_category_schemes <- function(limit = 25, offset = 0, query = NULL, orderBy =
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_schemes_agency("ISTAC", query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_category_schemes_agency("ISTAC", query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_schemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_category_schemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -210,9 +210,9 @@ get_schemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, o
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_schemes_agency_resource("ISTAC", "TEMAS_CANARIAS")
+#' get_structuralresources_category_schemes_agency_resource("ISTAC", "TEMAS_CANARIAS")
 #' @export
-get_schemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_category_schemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -244,9 +244,11 @@ get_schemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_schemes_agency_resource_version("ISTAC", "TEMAS_CANARIAS", "01.000")
+#' get_structuralresources_category_schemes_agency_resource_version(
+#'    "ISTAC", "TEMAS_CANARIAS", "01.000"
+#' )
 #' @export
-get_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
+get_structuralresources_category_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
 
   # Build URL
   api <- "structural-resources"
@@ -270,9 +272,11 @@ get_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_schemes_agency_resource_version_categories("ISTAC", "TEMAS_CANARIAS", "01.000")
+#' get_structuralresources_category_schemes_agency_resource_version_categories(
+#'    "ISTAC", "TEMAS_CANARIAS", "01.000"
+#' )
 #' @export
-get_schemes_agency_resource_version_categories <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_category_schemes_agency_resource_version_categories <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -303,9 +307,14 @@ get_schemes_agency_resource_version_categories <- function(agencyID, resourceID,
 #' @param version (string) Specific version of the resource.
 #' @param categoryID (string)
 #' @examples
-#' get_schemes_agency_resource_version_categories_id("ISTAC", "TEMAS_CANARIAS", "01.000", "060")
+#' get_structuralresources_category_schemes_agency_resource_version_categories_id(
+#'    "ISTAC", "TEMAS_CANARIAS", "01.000", "060"
+#' )
+#' get_structuralresources_category_schemes_agency_resource_version_categories_id(
+#'    "ISTAC", "TEMAS_CANARIAS", "01.000", "060.060_010.060_010_010"
+#' )
 #' @export
-get_schemes_agency_resource_version_categories_id <- function(agencyID, resourceID, version, categoryID) {
+get_structuralresources_category_schemes_agency_resource_version_categories_id <- function(agencyID, resourceID, version, categoryID) {
 
   # Build URL
   api <- "structural-resources"

@@ -7,10 +7,10 @@
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_content_constraints()
-#' get_content_constraints(query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_content_constraints()
+#' get_structuralresources_content_constraints(query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_content_constraints <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_content_constraints <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -43,9 +43,9 @@ get_content_constraints <- function(limit = 25, offset = 0, query = NULL, orderB
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_content_constraints_agency("ISTAC")
+#' get_structuralresources_content_constraints_agency("ISTAC")
 #' @export
-get_content_constraints_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_content_constraints_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -80,9 +80,9 @@ get_content_constraints_agency <- function(agencyID, limit = 25, offset = 0, que
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_content_constraints_agency_resource("ISTAC", "CL_AREA")
+#' get_structuralresources_content_constraints_agency_resource("ISTAC", "CL_AREA")
 #' @export
-get_content_constraints_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_content_constraints_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -114,9 +114,9 @@ get_content_constraints_agency_resource <- function(agencyID, resourceID, limit 
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_content_constraints_agency_resource_version("ISTAC", "CL_AREA", "01.000")
+#' get_structuralresources_content_constraints_agency_resource_version("ISTAC", "CL_AREA", "01.000")
 #' @export
-get_content_constraints_agency_resource_version <- function(agencyID, resourceID, version) {
+get_structuralresources_content_constraints_agency_resource_version <- function(agencyID, resourceID, version) {
 
 
   # Build URL
@@ -138,9 +138,11 @@ get_content_constraints_agency_resource_version <- function(agencyID, resourceID
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_content_constraints_agency_resource_version_regions("0001", "ISTAC", "CL_AREA", "01.000")
+#' get_structuralresources_content_constraints_agency_resource_version_regions(
+#'    "0001", "ISTAC", "CL_AREA", "01.000"
+#' )
 #' @export
-get_content_constraints_agency_resource_version_regions <- function(regionCode, agencyID, resourceID, version) {
+get_structuralresources_content_constraints_agency_resource_version_regions <- function(regionCode, agencyID, resourceID, version) {
 
 
   # Build URL
@@ -162,10 +164,10 @@ get_content_constraints_agency_resource_version_regions <- function(regionCode, 
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_data_structures()
-#' get_data_structures(query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_data_structures()
+#' get_structuralresources_data_structures(query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_data_structures <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_data_structures <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -198,9 +200,9 @@ get_data_structures <- function(limit = 25, offset = 0, query = NULL, orderBy = 
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_data_structures_agency("ISTAC")
+#' get_structuralresources_data_structures_agency("ISTAC")
 #' @export
-get_data_structures_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_data_structures_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -236,9 +238,9 @@ get_data_structures_agency <- function(agencyID, limit = 25, offset = 0, query =
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_data_structures_agency_resource("ISTAC", "CL_AREA")
+#' get_structuralresources_data_structures_agency_resource("ISTAC", "CL_AREA")
 #' @export
-get_data_structures_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_data_structures_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -270,9 +272,9 @@ get_data_structures_agency_resource <- function(agencyID, resourceID, limit = 25
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_data_structures_agency_resource_version("ISTAC", "CL_AREA", "01.000")
+#' get_structuralresources_data_structures_agency_resource_version("ISTAC", "CL_AREA", "01.000")
 #' @export
-get_data_structures_agency_resource_version <- function(agencyID, resourceID, version) {
+get_structuralresources_data_structures_agency_resource_version <- function(agencyID, resourceID, version) {
 
   # Build URL
   api <- "structural-resources"

@@ -3,9 +3,9 @@
 #' @title Get concept types
 #' @description This function returns the content from /v1.0/conceptTypes
 #' @examples
-#' get_concept_types()
+#' get_structuralresources_concept_types()
 #' @export
-get_concept_types <- function() {
+get_structuralresources_concept_types <- function() {
 
   # Build URL
   api <- "structural-resources"
@@ -25,10 +25,10 @@ get_concept_types <- function() {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_cschemes()
-#' get_cschemes(query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_concept_schemes()
+#' get_structuralresources_concept_schemes(query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_cschemes <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_concept_schemes <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -61,10 +61,10 @@ get_cschemes <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_cschemes_agency("ISTAC")
-#' get_cschemes_agency("ESTAT", query = "ID EQ 2090", orderBy = "ID ASC")
+#' get_structuralresources_concept_schemes_agency("ISTAC")
+#' get_structuralresources_concept_schemes_agency("ESTAT", query = "ID EQ 2090", orderBy = "ID ASC")
 #' @export
-get_cschemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_concept_schemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -100,9 +100,11 @@ get_cschemes_agency <- function(agencyID, limit = 25, offset = 0, query = NULL, 
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_cschemes_agency_resource(agencyID = "ISTAC", resourceID = "CL_AREA_ES")
+#' get_structuralresources_concept_schemes_agency_resource(
+#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES"
+#' )
 #' @export
-get_cschemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_concept_schemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -135,9 +137,11 @@ get_cschemes_agency_resource <- function(agencyID, resourceID, limit = 25, offse
 #' @param resourceID (string) Resource identifier.
 #' @param version (string) Specific version of the resource.
 #' @examples
-#' get_cschemes_agency_resource_ver(agencyID = "ISTAC", resourceID = "CL_AREA", version = "01.000")
+#' get_structuralresources_concept_schemes_agency_resource_version(
+#'    agencyID = "ISTAC", resourceID = "CL_AREA", version = "01.000"
+#' )
 #' @export
-get_cschemes_agency_resource_ver <- function(agencyID, resourceID, version) {
+get_structuralresources_concept_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
 
 
   # Build URL
@@ -162,9 +166,11 @@ get_cschemes_agency_resource_ver <- function(agencyID, resourceID, version) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_cschemes_agency_res_ver_cn(agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000")
+#' get_structuralresources_concept_schemes_agency_resource_version_concepts(
+#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000"
+#' )
 #' @export
-get_cschemes_agency_res_ver_cn <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_concept_schemes_agency_resource_version_concepts <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -195,9 +201,11 @@ get_cschemes_agency_res_ver_cn <- function(agencyID, resourceID, version, limit 
 #' @param version (string) Specific version of the resource.
 #' @param conceptID (string) Concept identifier.
 #' @examples
-#' get_cschemes_id(agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0)
+#' get_structuralresources_concept_schemes_agency_resource_version_concepts_id(
+#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0
+#' )
 #' @export
-get_cschemes_id <- function(agencyID, resourceID, version, conceptID) {
+get_structuralresources_concept_schemes_agency_resource_version_concepts_id <- function(agencyID, resourceID, version, conceptID) {
 
   # Build URL
   api <- "structural-resources"

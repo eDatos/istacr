@@ -23,6 +23,7 @@ parse_param <- function(param) {
   param <- gsub("[+]", "%2B", param) # Replace + for %2B
   param <- gsub("\"", "%22", param) # Replace \" for %22
   param <- gsub(" ", "%20", param) # Replace space for %20
+  param <- gsub("[:]", "%3A", param) # Replace : for %3A
 
   return(param)
 }

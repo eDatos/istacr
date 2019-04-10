@@ -7,9 +7,9 @@
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_variable_families()
+#' get_structuralresources_variable_families()
 #' @export
-get_variable_families <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_variable_families <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -39,9 +39,9 @@ get_variable_families <- function(limit = 25, offset = 0, query = NULL, orderBy 
 #' @description This function returns data from /v1.0/variablefamilies/{id}
 #' @param id (string) Variable family identificator.
 #' @examples
-#' get_variable_families_id("VRF_DEMOGRAFICAS")
+#' get_structuralresources_variable_families_id("VRF_DEMOGRAFICAS")
 #' @export
-get_variable_families_id <- function(id) {
+get_structuralresources_variable_families_id <- function(id) {
 
   # Build URL
   api <-  "structural-resources"
@@ -64,9 +64,9 @@ get_variable_families_id <- function(id) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_variable_families_id_variables("VRF_DEMOGRAFICAS")
+#' get_structuralresources_variable_families_id_variables("VRF_DEMOGRAFICAS")
 #' @export
-get_variable_families_id_variables <- function(id, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_variable_families_id_variables <- function(id, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -100,9 +100,9 @@ get_variable_families_id_variables <- function(id, limit = 25, offset = 0, query
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_variables()
+#' get_structuralresources_variables()
 #' @export
-get_variables <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_variables <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -130,9 +130,9 @@ get_variables <- function(limit = 25, offset = 0, query = NULL, orderBy = NULL) 
 #' @description This function returns data from /v1.0/variables/{id}
 #' @param id (string) Variable identificator.
 #' @examples
-#' get_variables_id("VR_SEXO")
+#' get_structuralresources_variables_id("VR_SEXO")
 #' @export
-get_variables_id <- function(id) {
+get_structuralresources_variables_id <- function(id) {
 
   # Build URL
   api <-  "structural-resources"
@@ -155,9 +155,9 @@ get_variables_id <- function(id) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_variableelements("VR_SEXO")
+#' get_structuralresources_variableelements("VR_SEXO")
 #' @export
-get_variableelements <- function(variableID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_variableelements <- function(variableID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse query
   if (!is.null(query)) {
@@ -189,10 +189,10 @@ get_variableelements <- function(variableID, limit = 25, offset = 0, query = NUL
 #' @param resourceID (string) Resource identificator.
 #' @param variableID (string) Variable identificator.
 #' @examples
-#' get_variableelements_resource("VR_SEXO", "FEMALE")
-#' get_variableelements_resource("VR_TERRITORIO", "CCAA_CANARIAS")
+#' get_structuralresources_variableelements_resource("VR_SEXO", "FEMALE")
+#' get_structuralresources_variableelements_resource("VR_TERRITORIO", "CCAA_CANARIAS")
 #' @export
-get_variableelements_resource <- function(variableID, resourceID) {
+get_structuralresources_variableelements_resource <- function(variableID, resourceID) {
 
   # Build URL
   api <-  "structural-resources"
@@ -217,9 +217,9 @@ get_variableelements_resource <- function(variableID, resourceID) {
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_geoinfo("VR_TERRITORIO", "MUN_ICOD_VINOS")
+#' get_structuralresources_geoinfo("VR_TERRITORIO", "CCAA_CANARIAS")
 #' @export
-get_geoinfo <- function(variableID, resourceID, fields = NULL, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
+get_structuralresources_geoinfo <- function(variableID, resourceID, fields = NULL, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 
   # Parse fields
   if (!is.null(fields)) {

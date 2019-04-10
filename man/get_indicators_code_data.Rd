@@ -25,4 +25,16 @@ This function returns complete data (for all spacetime) of the indicator.
 }
 \examples{
 get_indicators_code_data("AFILIACIONES")
+get_indicators_code_data("AFILIACIONES",
+  representation =
+    "GEOGRAPHICAL[35003|35005],MEASURE[ABSOLUTE]"
+)
+get_indicators_code_data("AFILIACIONES",
+  granularity =
+    "GEOGRAPHICAL[MUNICIPALITIES]"
+)
+get_indicators_code_data("AFILIACIONES",
+  granularity =
+    "GEOGRAPHICAL[MUNICIPALITIES]", fields = "-observationsMetadata"
+)
 }

@@ -33,8 +33,19 @@ This function returns a list of indicators published in the
 \examples{
 get_indicators()
 get_indicators(q = "subjectCode EQ 051")
+get_indicators(q = 'id EQ "PARO_REGISTRADO"')
+get_indicators(q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")')
+get_indicators(
+  q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
+  order = "id ASC"
+)
 get_indicators(
   q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
   order = "id ASC", fields = "+metadata"
+)
+get_indicators(
+  q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
+  order = "id ASC", fields = "+data", representation =
+    "GEOGRAPHICAL[35003|35005],MEASURE[ABSOLUTE]"
 )
 }
