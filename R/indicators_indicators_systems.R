@@ -154,9 +154,6 @@ get_indicators_systems_code_instances_code <- function(indicatorSystemCode, indi
 #' @param fields (string) Allows you to customize the response by excluding fields. The possible values are: \code{-observationsMetadata}.
 #' @examples
 #' get_indicators_systems_code_instances_code_data("C00075H", "21af0477-d63b-493b-ad02-4ab181547223")
-#' get_indicators_systems_code_instances_code_data("C00075H", "21af0477-d63b-493b-ad02-4ab181547223",
-#'   granularity = "GEOGRAPHICAL[MUNICIPALITIES]"
-#' )
 #' @export
 get_indicators_systems_code_instances_code_data <- function(indicatorSystemCode, indicatorInstanceCode, representation = NULL, granularity = NULL, fields = NULL) {
 

@@ -29,8 +29,9 @@ get_datasets <- function(lang = "es", limit = 25, offset = 0, orderBy = NULL, qu
   # Build URL
   params <- paste0("?lang=", lang, "&limit=", limit, "&offset=", offset, "&orderBy=", orderBy, "&query=", query)
   path <- paste0(path, params)
-
   url <- get_url(api, path)
+
+  # Get content
   content <- fromJSON(url)
 
   return(content)
@@ -65,10 +66,11 @@ get_datasets_agency <- function(agencyID, lang = "es", limit = 25, offset = 0, o
   }
 
   # Build URL
-  params <- paste0("?agencyID=", agencyID, "&lang=", lang, "&limit=", limit, "&offset=", offset, "&orderBy=", orderBy, "&query=", query)
-  path <- paste0(path, params)
+  params <- paste0("?lang=", lang, "&limit=", limit, "&offset=", offset, "&orderBy=", orderBy, "&query=", query)
+  resource <- paste0(agencyID, params)
+  url <- get_url(api, path, resource)
 
-  url <- get_url(api, path)
+  # Get content
   content <- fromJSON(url)
 
   return(content)
@@ -104,10 +106,11 @@ get_datasets_agency_resource <- function(agencyID, resourceID, lang = "es", limi
   }
 
   # Build URL
-  params <- paste0("?agencyID=", agencyID, "&resourceID=", resourceID, "&lang=", lang, "&limit=", limit, "&offset=", offset, "&orderBy=", orderBy, "&query=", query)
-  path <- paste0(path, params)
+  params <- paste0("?lang=", lang, "&limit=", limit, "&offset=", offset, "&orderBy=", orderBy, "&query=", query)
+  resource <- paste0(agencyID, "/", resourceID, params)
+  url <- get_url(api, path, resource)
 
-  url <- get_url(api, path)
+  # Get content
   content <- fromJSON(url)
 
   return(content)
@@ -144,13 +147,13 @@ get_datasets_agency_resource_version <- function(agencyID, resourceID, version, 
   }
 
   # Build URL
-  params <- paste0("?agencyID=", agencyID, "&resourceID=", resourceID, "&version=", version, "&dim=", dim, "&fields=", fields, "&lang=", lang)
-  path <- paste0(path, params)
+  params <- paste0("?dim=", dim, "&fields=", fields, "&lang=", lang)
+  resource <- paste0(agencyID, "/", resourceID, "/", version, params)
+  url <- get_url(api, path, resource)
 
-  url <- get_url(api, path)
+  # Get content
   content <- fromJSON(url)
 
   return(content)
-
 
 }

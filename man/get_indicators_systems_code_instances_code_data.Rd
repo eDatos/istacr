@@ -27,7 +27,4 @@ This function returns data of an indicator unit associated with
 }
 \examples{
 get_indicators_systems_code_instances_code_data("C00075H", "21af0477-d63b-493b-ad02-4ab181547223")
-get_indicators_systems_code_instances_code_data("C00075H", "21af0477-d63b-493b-ad02-4ab181547223",
-  granularity = "GEOGRAPHICAL[MUNICIPALITIES]"
-)
 }

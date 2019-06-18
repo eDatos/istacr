@@ -217,7 +217,7 @@ get_structuralresources_variableelements_resource <- function(variableID, resour
 #' @param query (string) Query to filter the results.
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
-#' get_structuralresources_geoinfo("VR_TERRITORIO", "CCAA_CANARIAS")
+#' geoinfo <- get_structuralresources_geoinfo("VR_TERRITORIO", "MUN_ICOD_VINOS")
 #' @export
 get_structuralresources_geoinfo <- function(variableID, resourceID, fields = NULL, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
 

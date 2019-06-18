@@ -26,5 +26,5 @@ get_structuralresources_geoinfo(variableID, resourceID, fields = NULL,
 This function returns data from /v1.0/variables/{variableID}/variableelements/{resourceID}/geoinfo
 }
 \examples{
-get_structuralresources_geoinfo("VR_TERRITORIO", "CCAA_CANARIAS")
+geoinfo <- get_structuralresources_geoinfo("VR_TERRITORIO", "MUN_ICOD_VINOS")
 }

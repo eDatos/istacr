@@ -16,19 +16,7 @@
 #' @param representation (string) Allows filtering the observations by their value.
 #'  Its use only makes sense when \code{+data} and/or \code{+observationsMetadata} has been included.
 #' @examples
-#' get_indicators()
-#' get_indicators(q = "subjectCode EQ 051")
-#' get_indicators(q = 'id EQ "PARO_REGISTRADO"')
-#' get_indicators(q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")')
-#' get_indicators(
-#'   q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
-#'   order = "id ASC"
-#' )
-#' get_indicators(
-#'   q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
-#'   order = "id ASC", fields = "+metadata"
-#' )
-#' get_indicators(
+#' indicators <- get_indicators(
 #'   q = 'id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
 #'   order = "id ASC", fields = "+data", representation =
 #'     "GEOGRAPHICAL[35003|35005],MEASURE[ABSOLUTE]"
@@ -105,18 +93,6 @@ get_indicators_code <- function(indicatorCode) {
 #'  The possible values are: \code{-observationsMetadata}.
 #' @examples
 #' get_indicators_code_data("AFILIACIONES")
-#' get_indicators_code_data("AFILIACIONES",
-#'   representation =
-#'     "GEOGRAPHICAL[35003|35005],MEASURE[ABSOLUTE]"
-#' )
-#' get_indicators_code_data("AFILIACIONES",
-#'   granularity =
-#'     "GEOGRAPHICAL[MUNICIPALITIES]"
-#' )
-#' get_indicators_code_data("AFILIACIONES",
-#'   granularity =
-#'     "GEOGRAPHICAL[MUNICIPALITIES]", fields = "-observationsMetadata"
-#' )
 #' @export
 get_indicators_code_data <- function(indicatorCode, representation = NULL, granularity = NULL, fields = NULL) {
 
