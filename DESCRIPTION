@@ -2,7 +2,7 @@ Package: istacr
 Type: Package
 Title: Obtaining Open Data from Instituto Canario De Estadistica (ISTAC) API
 Version: 0.1.1
-Date: 2019-06-17
+Date: 2019-07-01
 Authors@R: c(
     person("Alberto", "Gonzalez", email = "jgonyanp@gobiernodecanarias.org", role = c("aut", "cre"))
   )
