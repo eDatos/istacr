@@ -54,7 +54,7 @@ get_indicators <- function(q = NULL, order = NULL, limit = 25, offset = 0, field
   }
 
   url <- get_url(api, path)
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -76,7 +76,7 @@ get_indicators_code <- function(indicatorCode) {
   path <- "indicators"
 
   url <- get_url(api, path, resource = indicatorCode)
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -92,7 +92,7 @@ get_indicators_code <- function(indicatorCode) {
 #' @param fields (string) Allows you to customize the response by excluding fields.
 #'  The possible values are: \code{-observationsMetadata}.
 #' @examples
-#' get_indicators_code_data("AFILIACIONES")
+#' get_indicators_code_data("AFILIACIONES", fields = "-observationsMetadata")
 #' @export
 get_indicators_code_data <- function(indicatorCode, representation = NULL, granularity = NULL, fields = NULL) {
 
@@ -118,7 +118,7 @@ get_indicators_code_data <- function(indicatorCode, representation = NULL, granu
   url <- get_url(api, path, resource = resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }

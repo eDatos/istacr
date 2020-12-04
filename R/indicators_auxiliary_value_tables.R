@@ -16,7 +16,7 @@ get_indicators_geographic_granularities <- function() {
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -53,7 +53,7 @@ get_indicators_geographical_values <- function(geographicalGranularityCode, subj
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -72,7 +72,7 @@ get_indicators_subjects <- function() {
 
   # Get content
   url <- get_url(api, path)
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -92,7 +92,7 @@ get_indicators_time_granularities <- function() {
 
   # Get content
   url <- get_url(api, path)
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }

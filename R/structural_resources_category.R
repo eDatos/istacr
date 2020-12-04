@@ -30,7 +30,7 @@ get_structuralresources_categorisations <- function(limit = 25, offset = 0, quer
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -66,7 +66,7 @@ get_structuralresources_categorisations_agency <- function(agencyID, limit = 25,
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -103,7 +103,7 @@ get_structuralresources_categorisations_agency_resource <- function(agencyID, re
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -125,7 +125,7 @@ get_structuralresources_categorisations_agency_resource_version <- function(agen
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -160,7 +160,7 @@ get_structuralresources_category_schemes <- function(limit = 25, offset = 0, que
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -196,7 +196,7 @@ get_structuralresources_category_schemes_agency <- function(agencyID, limit = 25
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -233,7 +233,7 @@ get_structuralresources_category_schemes_agency_resource <- function(agencyID, r
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -257,7 +257,7 @@ get_structuralresources_category_schemes_agency_resource_version <- function(age
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -273,7 +273,7 @@ get_structuralresources_category_schemes_agency_resource_version <- function(age
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
 #' get_structuralresources_category_schemes_agency_resource_version_categories(
-#'    "ISTAC", "TEMAS_CANARIAS", "01.000"
+#'    "ISTAC", "TEMAS_CANARIAS", "01.000", limit = 10
 #' )
 #' @export
 get_structuralresources_category_schemes_agency_resource_version_categories <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
@@ -295,7 +295,7 @@ get_structuralresources_category_schemes_agency_resource_version_categories <- f
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -323,7 +323,7 @@ get_structuralresources_category_schemes_agency_resource_version_categories_id <
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }

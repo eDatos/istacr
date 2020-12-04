@@ -24,7 +24,7 @@ get_indicators_systems <- function(limit = 25, offset = 0) {
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -48,7 +48,7 @@ get_indicators_systems_code <- function(indicatorSystemCode) {
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -113,7 +113,7 @@ get_indicators_systems_code_instances <- function(indicatorSystemCode, q = NULL,
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -137,7 +137,7 @@ get_indicators_systems_code_instances_code <- function(indicatorSystemCode, indi
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -181,7 +181,7 @@ get_indicators_systems_code_instances_code_data <- function(indicatorSystemCode,
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }

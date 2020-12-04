@@ -13,7 +13,7 @@ get_structuralresources_concept_types <- function() {
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -48,7 +48,7 @@ get_structuralresources_concept_schemes <- function(limit = 25, offset = 0, quer
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -86,7 +86,7 @@ get_structuralresources_concept_schemes_agency <- function(agencyID, limit = 25,
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -126,7 +126,7 @@ get_structuralresources_concept_schemes_agency_resource <- function(agencyID, re
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -151,7 +151,7 @@ get_structuralresources_concept_schemes_agency_resource_version <- function(agen
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }
@@ -189,7 +189,7 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts <- func
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }
@@ -214,7 +214,7 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts_id <- f
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }

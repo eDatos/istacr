@@ -32,7 +32,7 @@ get_datasets <- function(lang = "es", limit = 25, offset = 0, orderBy = NULL, qu
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -71,7 +71,7 @@ get_datasets_agency <- function(agencyID, lang = "es", limit = 25, offset = 0, o
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -111,7 +111,7 @@ get_datasets_agency_resource <- function(agencyID, resourceID, lang = "es", limi
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -127,7 +127,8 @@ get_datasets_agency_resource <- function(agencyID, resourceID, lang = "es", limi
 #' @param lang (string) Language in which you want to get the answer.
 #' @examples
 #' get_datasets_agency_resource_version(
-#'    agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000"
+#'    agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000",
+#'    fields = "-data,-metadata"
 #' )
 #' @export
 get_datasets_agency_resource_version <- function(agencyID, resourceID, version, dim = NULL, fields = NULL, lang = "es") {
@@ -152,7 +153,7 @@ get_datasets_agency_resource_version <- function(agencyID, resourceID, version, 
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 

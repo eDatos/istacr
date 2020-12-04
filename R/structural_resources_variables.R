@@ -29,7 +29,7 @@ get_structuralresources_variable_families <- function(limit = 25, offset = 0, qu
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -50,7 +50,7 @@ get_structuralresources_variable_families_id <- function(id) {
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -87,7 +87,7 @@ get_structuralresources_variable_families_id_variables <- function(id, limit = 2
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -120,7 +120,7 @@ get_structuralresources_variables <- function(limit = 25, offset = 0, query = NU
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -141,7 +141,7 @@ get_structuralresources_variables_id <- function(id) {
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -178,7 +178,7 @@ get_structuralresources_variableelements <- function(variableID, limit = 25, off
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -201,7 +201,7 @@ get_structuralresources_variableelements_resource <- function(variableID, resour
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 
@@ -245,7 +245,7 @@ get_structuralresources_geoinfo <- function(variableID, resourceID, fields = NUL
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 

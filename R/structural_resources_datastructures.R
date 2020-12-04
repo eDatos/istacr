@@ -30,7 +30,7 @@ get_structuralresources_content_constraints <- function(limit = 25, offset = 0, 
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -66,7 +66,7 @@ get_structuralresources_content_constraints_agency <- function(agencyID, limit =
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -103,7 +103,7 @@ get_structuralresources_content_constraints_agency_resource <- function(agencyID
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -126,7 +126,7 @@ get_structuralresources_content_constraints_agency_resource_version <- function(
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }
@@ -152,7 +152,7 @@ get_structuralresources_content_constraints_agency_resource_version_regions <- f
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }
@@ -187,7 +187,7 @@ get_structuralresources_data_structures <- function(limit = 25, offset = 0, quer
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -223,7 +223,7 @@ get_structuralresources_data_structures_agency <- function(agencyID, limit = 25,
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -261,7 +261,7 @@ get_structuralresources_data_structures_agency_resource <- function(agencyID, re
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -283,7 +283,7 @@ get_structuralresources_data_structures_agency_resource_version <- function(agen
   url <- get_url(api, path, resource)
 
   # Get content
-  # content <- fromJSON(url)
+  # content <- get_content(url)
 
   return(url)
 }

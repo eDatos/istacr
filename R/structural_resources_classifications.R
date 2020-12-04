@@ -29,7 +29,7 @@ get_structuralresources_codelist_families <- function(limit = 25, offset = 0, or
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -49,7 +49,7 @@ get_structuralresources_codelist_families_id <- function(id = NULL) {
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -83,7 +83,7 @@ get_structuralresources_codelists <- function(limit = 25, offset = 0, query = NU
   url <- get_url(api, path)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -121,7 +121,7 @@ get_structuralresources_codelists_agency <- function(agencyID, limit = 25, offse
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -160,7 +160,7 @@ get_structuralresources_codelists_agency_resource <- function(agencyID, resource
   url <- get_url(api, path, resource)
 
   # Get Content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -182,7 +182,7 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyID, 
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -231,7 +231,7 @@ get_structuralresources_codelists_agency_resource_version_codes <- function(agen
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
@@ -256,7 +256,7 @@ get_structuralresources_codelists_agency_resource_version_codes_codeid <- functi
   url <- get_url(api, path, resource)
 
   # Get content
-  content <- fromJSON(url)
+  content <- get_content(url)
 
   return(content)
 }
