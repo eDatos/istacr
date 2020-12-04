@@ -4,8 +4,13 @@
 \alias{get_structuralresources_variableelements}
 \title{Get variableelements}
 \usage{
-get_structuralresources_variableelements(variableID, limit = 25,
-  offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_variableelements(
+  variableID,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{variableID}{(string) Variable identificator.}

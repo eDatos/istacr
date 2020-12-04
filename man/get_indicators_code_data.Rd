@@ -4,8 +4,12 @@
 \alias{get_indicators_code_data}
 \title{Get indicators code data}
 \usage{
-get_indicators_code_data(indicatorCode, representation = NULL,
-  granularity = NULL, fields = NULL)
+get_indicators_code_data(
+  indicatorCode,
+  representation = NULL,
+  granularity = NULL,
+  fields = NULL
+)
 }
 \arguments{
 \item{indicatorCode}{(string) an indicator code}
@@ -24,5 +28,5 @@ This function returns complete data (for all spacetime) of the indicator.
  of the measured fact.
 }
 \examples{
-get_indicators_code_data("AFILIACIONES")
+get_indicators_code_data("AFILIACIONES", fields = "-observationsMetadata")
 }

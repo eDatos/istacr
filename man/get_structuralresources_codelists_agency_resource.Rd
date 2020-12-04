@@ -4,8 +4,14 @@
 \alias{get_structuralresources_codelists_agency_resource}
 \title{Get codelists agency resource}
 \usage{
-get_structuralresources_codelists_agency_resource(agencyID, resourceID,
-  limit = 25, offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_codelists_agency_resource(
+  agencyID,
+  resourceID,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{agencyID}{(string) Agency identificator.}

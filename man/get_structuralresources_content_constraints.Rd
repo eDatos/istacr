@@ -4,8 +4,12 @@
 \alias{get_structuralresources_content_constraints}
 \title{Get content constraints}
 \usage{
-get_structuralresources_content_constraints(limit = 25, offset = 0,
-  query = NULL, orderBy = NULL)
+get_structuralresources_content_constraints(
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{limit}{(int) Results limit. By default \code{limit = 25}.}

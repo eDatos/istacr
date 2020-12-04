@@ -4,9 +4,12 @@
 \alias{get_structuralresources_content_constraints_agency_resource_version_regions}
 \title{Get content constraints agency resource version regions}
 \usage{
-
-  get_structuralresources_content_constraints_agency_resource_version_regions(regionCode,
-  agencyID, resourceID, version)
+get_structuralresources_content_constraints_agency_resource_version_regions(
+  regionCode,
+  agencyID,
+  resourceID,
+  version
+)
 }
 \arguments{
 \item{regionCode}{(string) Region code.}

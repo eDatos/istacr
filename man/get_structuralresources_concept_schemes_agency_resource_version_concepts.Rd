@@ -4,10 +4,15 @@
 \alias{get_structuralresources_concept_schemes_agency_resource_version_concepts}
 \title{Get concept schemes agency resource version concepts}
 \usage{
-
-  get_structuralresources_concept_schemes_agency_resource_version_concepts(agencyID,
-  resourceID, version, limit = 25, offset = 0, query = NULL,
-  orderBy = NULL)
+get_structuralresources_concept_schemes_agency_resource_version_concepts(
+  agencyID,
+  resourceID,
+  version,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the agency that publishes.}

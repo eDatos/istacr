@@ -4,9 +4,11 @@
 \alias{get_structuralresources_content_constraints_agency_resource_version}
 \title{Get content constraints agency resource version}
 \usage{
-
-  get_structuralresources_content_constraints_agency_resource_version(agencyID,
-  resourceID, version)
+get_structuralresources_content_constraints_agency_resource_version(
+  agencyID,
+  resourceID,
+  version
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the agency that publishes.}

@@ -4,9 +4,13 @@
 \alias{get_indicators_systems_code_instances_code_data}
 \title{Get indicators system code instances code data}
 \usage{
-get_indicators_systems_code_instances_code_data(indicatorSystemCode,
-  indicatorInstanceCode, representation = NULL, granularity = NULL,
-  fields = NULL)
+get_indicators_systems_code_instances_code_data(
+  indicatorSystemCode,
+  indicatorInstanceCode,
+  representation = NULL,
+  granularity = NULL,
+  fields = NULL
+)
 }
 \arguments{
 \item{indicatorSystemCode}{(string) Indicator system code}

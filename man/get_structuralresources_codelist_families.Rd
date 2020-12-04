@@ -4,8 +4,12 @@
 \alias{get_structuralresources_codelist_families}
 \title{Get codelist families}
 \usage{
-get_structuralresources_codelist_families(limit = 25, offset = 0,
-  orderBy = NULL, query = NULL)
+get_structuralresources_codelist_families(
+  limit = 25,
+  offset = 0,
+  orderBy = NULL,
+  query = NULL
+)
 }
 \arguments{
 \item{limit}{(int) Results limit. By default \code{limit = 25}.}

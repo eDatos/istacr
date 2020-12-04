@@ -4,8 +4,11 @@
 \alias{get_structuralresources_categorisations_agency_resource_version}
 \title{Get categorisations agency resource version}
 \usage{
-get_structuralresources_categorisations_agency_resource_version(agencyID,
-  resourceID, version)
+get_structuralresources_categorisations_agency_resource_version(
+  agencyID,
+  resourceID,
+  version
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the agency that publishes.}

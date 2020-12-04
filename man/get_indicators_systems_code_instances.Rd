@@ -4,9 +4,16 @@
 \alias{get_indicators_systems_code_instances}
 \title{Get indicators system code instances}
 \usage{
-get_indicators_systems_code_instances(indicatorSystemCode, q = NULL,
-  order = NULL, limit = 25, offset = 0, fields = NULL,
-  representation = NULL, granularity = NULL)
+get_indicators_systems_code_instances(
+  indicatorSystemCode,
+  q = NULL,
+  order = NULL,
+  limit = 25,
+  offset = 0,
+  fields = NULL,
+  representation = NULL,
+  granularity = NULL
+)
 }
 \arguments{
 \item{indicatorSystemCode}{(string) with an indicator system code}

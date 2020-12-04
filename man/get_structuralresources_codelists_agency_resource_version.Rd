@@ -4,8 +4,11 @@
 \alias{get_structuralresources_codelists_agency_resource_version}
 \title{Get codelists agency resource version}
 \usage{
-get_structuralresources_codelists_agency_resource_version(agencyID,
-  resourceID, version)
+get_structuralresources_codelists_agency_resource_version(
+  agencyID,
+  resourceID,
+  version
+)
 }
 \arguments{
 \item{agencyID}{(string) Agency identificator.}

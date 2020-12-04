@@ -4,8 +4,12 @@
 \alias{get_structuralresources_codelists}
 \title{Get codelists}
 \usage{
-get_structuralresources_codelists(limit = 25, offset = 0,
-  query = NULL, orderBy = NULL)
+get_structuralresources_codelists(
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{limit}{(int) Results limit. By default \code{limit = 25}.}

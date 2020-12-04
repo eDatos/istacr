@@ -4,8 +4,11 @@
 \alias{get_indicators_geographical_values}
 \title{Get geographical values}
 \usage{
-get_indicators_geographical_values(geographicalGranularityCode,
-  subjectCode = NULL, systemCode = NULL)
+get_indicators_geographical_values(
+  geographicalGranularityCode,
+  subjectCode = NULL,
+  systemCode = NULL
+)
 }
 \arguments{
 \item{geographicalGranularityCode}{(string) geographical granularity code}

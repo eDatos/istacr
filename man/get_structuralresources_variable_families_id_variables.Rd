@@ -4,8 +4,13 @@
 \alias{get_structuralresources_variable_families_id_variables}
 \title{Get variable families (id) variables}
 \usage{
-get_structuralresources_variable_families_id_variables(id, limit = 25,
-  offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_variable_families_id_variables(
+  id,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{id}{(string) Variable family identificator.}

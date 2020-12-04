@@ -4,8 +4,13 @@
 \alias{get_structuralresources_concept_schemes_agency}
 \title{Get concept schemes agency}
 \usage{
-get_structuralresources_concept_schemes_agency(agencyID, limit = 25,
-  offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_concept_schemes_agency(
+  agencyID,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the agency that publishes.}

@@ -4,8 +4,14 @@
 \alias{get_datasets_agency}
 \title{Get datasets (agencyID)}
 \usage{
-get_datasets_agency(agencyID, lang = "es", limit = 25, offset = 0,
-  orderBy = NULL, query = NULL)
+get_datasets_agency(
+  agencyID,
+  lang = "es",
+  limit = 25,
+  offset = 0,
+  orderBy = NULL,
+  query = NULL
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the maintainer organization of the resource. A possible value is \code{ISTAC}.}

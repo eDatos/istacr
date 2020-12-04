@@ -4,8 +4,14 @@
 \alias{get_structuralresources_content_constraints_agency_resource}
 \title{Get content constraints agency resource}
 \usage{
-get_structuralresources_content_constraints_agency_resource(agencyID,
-  resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_content_constraints_agency_resource(
+  agencyID,
+  resourceID,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{agencyID}{(string) Identifier of the agency that publishes.}

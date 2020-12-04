@@ -4,8 +4,12 @@
 \alias{get_structuralresources_categorisations}
 \title{Get categorisations}
 \usage{
-get_structuralresources_categorisations(limit = 25, offset = 0,
-  query = NULL, orderBy = NULL)
+get_structuralresources_categorisations(
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{limit}{(int) Results limit. By default \code{limit = 25}.}

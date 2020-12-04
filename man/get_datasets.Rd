@@ -4,8 +4,7 @@
 \alias{get_datasets}
 \title{Get datasets}
 \usage{
-get_datasets(lang = "es", limit = 25, offset = 0, orderBy = NULL,
-  query = NULL)
+get_datasets(lang = "es", limit = 25, offset = 0, orderBy = NULL, query = NULL)
 }
 \arguments{
 \item{lang}{(string) Language in which you want to get the answer.}

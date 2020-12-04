@@ -4,8 +4,14 @@
 \alias{get_indicators}
 \title{Get indicators}
 \usage{
-get_indicators(q = NULL, order = NULL, limit = 25, offset = 0,
-  fields = NULL, representation = NULL)
+get_indicators(
+  q = NULL,
+  order = NULL,
+  limit = 25,
+  offset = 0,
+  fields = NULL,
+  representation = NULL
+)
 }
 \arguments{
 \item{q}{(string) Metadata query on which the searches can be built using:

@@ -4,8 +4,15 @@
 \alias{get_structuralresources_geoinfo}
 \title{Get geoinfo}
 \usage{
-get_structuralresources_geoinfo(variableID, resourceID, fields = NULL,
-  limit = 25, offset = 0, query = NULL, orderBy = NULL)
+get_structuralresources_geoinfo(
+  variableID,
+  resourceID,
+  fields = NULL,
+  limit = 25,
+  offset = 0,
+  query = NULL,
+  orderBy = NULL
+)
 }
 \arguments{
 \item{variableID}{(string) Variable identificator.}
