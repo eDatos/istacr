@@ -2,7 +2,6 @@
 
 # Build API URL
 get_url <- function(api, path, resource = NULL) {
-
   url_root <- paste0("https://datos.canarias.es/api/estadisticas/", api, "/v1.0/")
 
   if (is.null(resource)) {
@@ -16,7 +15,6 @@ get_url <- function(api, path, resource = NULL) {
 
 # Get content from URL
 get_content <- function(url) {
-
   content <- NULL
 
   tryCatch(
@@ -25,22 +23,20 @@ get_content <- function(url) {
       content <- fromJSON(url)
     },
     # Catch errors
-    error = function(e){
-      message('Oops! An error occurred while accessing the ISTAC api')
+    error = function(e) {
+      message("Oops! An error occurred while accessing the ISTAC api")
       content <- NULL
       print(e)
     },
     # Catch warnings
-    warning = function(w){
-      message('Oops! Some warnings ocurred')
+    warning = function(w) {
+      message("Oops! Some warnings ocurred")
       content <- NULL
       print(w)
     }
-
   )
 
   return(content)
-
 }
 
 # Example: parse_param("GEOGRAPHICAL[MUNICIPALITIES]")

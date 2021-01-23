@@ -139,7 +139,7 @@ get_structuralresources_content_constraints_agency_resource_version <- function(
 #' @param version (string) Specific version of the resource.
 #' @examples
 #' get_structuralresources_content_constraints_agency_resource_version_regions(
-#'    "0001", "ISTAC", "CL_AREA", "01.000"
+#'   "0001", "ISTAC", "CL_AREA", "01.000"
 #' )
 #' @export
 get_structuralresources_content_constraints_agency_resource_version_regions <- function(regionCode, agencyID, resourceID, version) {

@@ -245,7 +245,7 @@ get_structuralresources_category_schemes_agency_resource <- function(agencyID, r
 #' @param version (string) Specific version of the resource.
 #' @examples
 #' get_structuralresources_category_schemes_agency_resource_version(
-#'    "ISTAC", "TEMAS_CANARIAS", "01.000"
+#'   "ISTAC", "TEMAS_CANARIAS", "01.000"
 #' )
 #' @export
 get_structuralresources_category_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
@@ -273,7 +273,8 @@ get_structuralresources_category_schemes_agency_resource_version <- function(age
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
 #' get_structuralresources_category_schemes_agency_resource_version_categories(
-#'    "ISTAC", "TEMAS_CANARIAS", "01.000", limit = 10
+#'   "ISTAC", "TEMAS_CANARIAS", "01.000",
+#'   limit = 10
 #' )
 #' @export
 get_structuralresources_category_schemes_agency_resource_version_categories <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
@@ -308,10 +309,10 @@ get_structuralresources_category_schemes_agency_resource_version_categories <- f
 #' @param categoryID (string)
 #' @examples
 #' get_structuralresources_category_schemes_agency_resource_version_categories_id(
-#'    "ISTAC", "TEMAS_CANARIAS", "01.000", "060"
+#'   "ISTAC", "TEMAS_CANARIAS", "01.000", "060"
 #' )
 #' get_structuralresources_category_schemes_agency_resource_version_categories_id(
-#'    "ISTAC", "TEMAS_CANARIAS", "01.000", "060.060_010.060_010_010"
+#'   "ISTAC", "TEMAS_CANARIAS", "01.000", "060.060_010.060_010_010"
 #' )
 #' @export
 get_structuralresources_category_schemes_agency_resource_version_categories_id <- function(agencyID, resourceID, version, categoryID) {
