@@ -11,7 +11,10 @@ Description: You can access to open data published in Instituto Canario De Estad
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
   jsonlite,
   curl
 RoxygenNote: 7.1.1
+Suggests:
+    testthat,
+    covr
