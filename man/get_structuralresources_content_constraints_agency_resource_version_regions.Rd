@@ -25,6 +25,6 @@ This function returns the content from /v1.0/contentConstraints/{agencyID}/{reso
 }
 \examples{
 get_structuralresources_content_constraints_agency_resource_version_regions(
-   "0001", "ISTAC", "CL_AREA", "01.000"
+  "0001", "ISTAC", "CL_AREA", "01.000"
 )
 }

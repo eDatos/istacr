@@ -25,6 +25,6 @@ This function allows to consult a specific code of a version of a classification
 }
 \examples{
 get_structuralresources_codelists_agency_resource_version_codes_codeid(
-   "ISTAC", "CL_AREA_ES", "01.000", "ES706A01"
+  "ISTAC", "CL_AREA_ES", "01.000", "ES706A01"
 )
 }
