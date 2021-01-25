@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/jlopezper/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/jlopezper/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
 <!-- badges: end -->
 
 The goal of `istacr` is to provide a wrapper to the [ISTAC api
@@ -50,7 +54,7 @@ str(tst, max.level = 1)
 #>  $ kind    : chr "indicators#indicators"
 #>  $ limit   : int 25
 #>  $ offset  : int 0
-#>  $ total   : int 207
+#>  $ total   : int 211
 #>  $ selfLink: chr "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators?order&fields&representation&limit=25&offset=0"
 #>  $ nextLink: chr "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators?order&fields&representation&limit=25&offset=25"
 #>  $ lastLink: chr "https://datos.canarias.es/api/estadisticas/indicators/v1.0/indicators?order&fields&representation&limit=25&offset=200"
@@ -136,12 +140,12 @@ str(tst, max.level = 1)
 #> List of 8
 #>  $ dataset :'data.frame':    25 obs. of  5 variables:
 #>  $ kind    : chr "statisticalResources#datasets"
-#>  $ total   : int 347
+#>  $ total   : int 357
 #>  $ limit   : int 25
 #>  $ offset  : int 0
 #>  $ selfLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets?query&orderBy&limit=25&offset=0"
 #>  $ nextLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets?query&orderBy&limit=25&offset=25"
-#>  $ lastLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets?query&orderBy&limit=25&offset=325"
+#>  $ lastLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets?query&orderBy&limit=25&offset=350"
 ```
 
 Only those from a specific maintainer:
@@ -152,12 +156,12 @@ str(tst, max.level = 1)
 #> List of 8
 #>  $ dataset :'data.frame':    25 obs. of  5 variables:
 #>  $ kind    : chr "statisticalResources#datasets"
-#>  $ total   : int 347
+#>  $ total   : int 357
 #>  $ limit   : int 25
 #>  $ offset  : int 0
 #>  $ selfLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets/ISTAC?query&orderBy&limit=25&offset=0"
 #>  $ nextLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets/ISTAC?query&orderBy&limit=25&offset=25"
-#>  $ lastLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets/ISTAC?query&orderBy&limit=25&offset=325"
+#>  $ lastLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets/ISTAC?query&orderBy&limit=25&offset=350"
 ```
 
 ### Structural resources
@@ -205,7 +209,7 @@ tst$codelist
 #> 3 Clasificación de Abandono de Cultivo, es structuralResources#codelist
 ```
 
-## Documentation
+## Further information
 
 Please find the latest documentation on
 [CRAN](https://cran.r-project.org/web/packages/istacr/istacr.pdf). In
