@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 # istacr
 
 <!-- badges: start -->
-[![R build status](https://github.com/jlopezper/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
-[![Codecov test coverage](https://codecov.io/gh/jlopezper/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
+[![R build status](https://github.com/eDatos/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
+[![Codecov test coverage](https://codecov.io/gh/eDatos/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
 <!-- badges: end -->
 
 The goal of `istacr` is to provide a wrapper to the [ISTAC api catalog](https://www3.gobiernodecanarias.org/aplicaciones/appsistac/api), allowing the user to obtain the open data from R. 

@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![R build
-status](https://github.com/jlopezper/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
+status](https://github.com/eDatos/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/jlopezper/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
+coverage](https://codecov.io/gh/eDatos/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
 <!-- badges: end -->
 
 The goal of `istacr` is to provide a wrapper to the [ISTAC api
@@ -140,7 +140,7 @@ str(tst, max.level = 1)
 #> List of 8
 #>  $ dataset :'data.frame':    25 obs. of  5 variables:
 #>  $ kind    : chr "statisticalResources#datasets"
-#>  $ total   : int 357
+#>  $ total   : int 359
 #>  $ limit   : int 25
 #>  $ offset  : int 0
 #>  $ selfLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets?query&orderBy&limit=25&offset=0"
@@ -156,7 +156,7 @@ str(tst, max.level = 1)
 #> List of 8
 #>  $ dataset :'data.frame':    25 obs. of  5 variables:
 #>  $ kind    : chr "statisticalResources#datasets"
-#>  $ total   : int 357
+#>  $ total   : int 359
 #>  $ limit   : int 25
 #>  $ offset  : int 0
 #>  $ selfLink: chr "https://datos.canarias.es/api/estadisticas/statistical-resources/v1.0/datasets/ISTAC?query&orderBy&limit=25&offset=0"
