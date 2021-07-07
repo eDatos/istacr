@@ -25,9 +25,9 @@ This function returns the content from /v1.0/categoryschemes/{agencyID}/{resourc
 }
 \examples{
 get_structuralresources_category_schemes_agency_resource_version_categories_id(
-   "ISTAC", "TEMAS_CANARIAS", "01.000", "060"
+  "ISTAC", "TEMAS_CANARIAS", "01.000", "060"
 )
 get_structuralresources_category_schemes_agency_resource_version_categories_id(
-   "ISTAC", "TEMAS_CANARIAS", "01.000", "060.060_010.060_010_010"
+  "ISTAC", "TEMAS_CANARIAS", "01.000", "060.060_010.060_010_010"
 )
 }

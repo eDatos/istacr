@@ -101,7 +101,7 @@ get_structuralresources_concept_schemes_agency <- function(agencyID, limit = 25,
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
 #' get_structuralresources_concept_schemes_agency_resource(
-#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES"
+#'   agencyID = "ISTAC", resourceID = "CL_AREA_ES"
 #' )
 #' @export
 get_structuralresources_concept_schemes_agency_resource <- function(agencyID, resourceID, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
@@ -138,7 +138,7 @@ get_structuralresources_concept_schemes_agency_resource <- function(agencyID, re
 #' @param version (string) Specific version of the resource.
 #' @examples
 #' get_structuralresources_concept_schemes_agency_resource_version(
-#'    agencyID = "ISTAC", resourceID = "CL_AREA", version = "01.000"
+#'   agencyID = "ISTAC", resourceID = "CL_AREA", version = "01.000"
 #' )
 #' @export
 get_structuralresources_concept_schemes_agency_resource_version <- function(agencyID, resourceID, version) {
@@ -167,7 +167,7 @@ get_structuralresources_concept_schemes_agency_resource_version <- function(agen
 #' @param orderBy (string) Field by which to sort the results.
 #' @examples
 #' get_structuralresources_concept_schemes_agency_resource_version_concepts(
-#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000"
+#'   agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000"
 #' )
 #' @export
 get_structuralresources_concept_schemes_agency_resource_version_concepts <- function(agencyID, resourceID, version, limit = 25, offset = 0, query = NULL, orderBy = NULL) {
@@ -202,7 +202,7 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts <- func
 #' @param conceptID (string) Concept identifier.
 #' @examples
 #' get_structuralresources_concept_schemes_agency_resource_version_concepts_id(
-#'    agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0
+#'   agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0
 #' )
 #' @export
 get_structuralresources_concept_schemes_agency_resource_version_concepts_id <- function(agencyID, resourceID, version, conceptID) {

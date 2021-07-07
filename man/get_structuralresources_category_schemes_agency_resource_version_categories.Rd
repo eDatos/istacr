@@ -34,6 +34,7 @@ This function returns the content from /v1.0/categoryschemes/{agencyID}/{resourc
 }
 \examples{
 get_structuralresources_category_schemes_agency_resource_version_categories(
-   "ISTAC", "TEMAS_CANARIAS", "01.000", limit = 10
+  "ISTAC", "TEMAS_CANARIAS", "01.000",
+  limit = 10
 )
 }

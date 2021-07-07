@@ -31,7 +31,7 @@ This function allows to obtain all the versions of a statistical cube with a cer
 }
 \examples{
 get_datasets_agency_resource_version(
-   agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000",
-   fields = "-data,-metadata"
+  agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000",
+  fields = "-data,-metadata"
 )
 }

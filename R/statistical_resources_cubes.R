@@ -35,7 +35,6 @@ get_datasets <- function(lang = "es", limit = 25, offset = 0, orderBy = NULL, qu
   content <- get_content(url)
 
   return(content)
-
 }
 
 #' @title Get datasets (agencyID)
@@ -74,7 +73,6 @@ get_datasets_agency <- function(agencyID, lang = "es", limit = 25, offset = 0, o
   content <- get_content(url)
 
   return(content)
-
 }
 
 #' @title Get datasets (agencyID / resourceID)
@@ -114,7 +112,6 @@ get_datasets_agency_resource <- function(agencyID, resourceID, lang = "es", limi
   content <- get_content(url)
 
   return(content)
-
 }
 
 #' @title Get datasets (agencyID / resourceID / version)
@@ -127,8 +124,8 @@ get_datasets_agency_resource <- function(agencyID, resourceID, lang = "es", limi
 #' @param lang (string) Language in which you want to get the answer.
 #' @examples
 #' get_datasets_agency_resource_version(
-#'    agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000",
-#'    fields = "-data,-metadata"
+#'   agencyID = "ISTAC", resourceID = "C00010A_000002", version = "001.000",
+#'   fields = "-data,-metadata"
 #' )
 #' @export
 get_datasets_agency_resource_version <- function(agencyID, resourceID, version, dim = NULL, fields = NULL, lang = "es") {
@@ -156,5 +153,4 @@ get_datasets_agency_resource_version <- function(agencyID, resourceID, version, 
   content <- get_content(url)
 
   return(content)
-
 }

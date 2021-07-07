@@ -1,0 +1,112 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# istacr
+
+<!-- badges: start -->
+[![R build status](https://github.com/eDatos/istacr/workflows/R-CMD-check/badge.svg)](https://github.com/jlopezper/istacr/actions)
+[![Codecov test coverage](https://codecov.io/gh/eDatos/istacr/branch/master/graph/badge.svg)](https://codecov.io/gh/jlopezper/istacr?branch=master)
+<!-- badges: end -->
+
+The goal of `istacr` is to provide a wrapper to the [ISTAC api catalog](https://www3.gobiernodecanarias.org/aplicaciones/appsistac/api), allowing the user to obtain the open data from R. 
+
+## Installation
+
+You can install the released version of istacr from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("istacr")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("eDatos/istacr")
+```
+## How to use this package
+
+The package offers different functions depending on the resource you want to access. There're three main resources:
+
+- Indicators
+- Statistical resources (cubes)
+- Structural resources
+
+
+## Examples
+
+### Indicators
+
+Get a list of all indicators:
+
+```{r example1}
+library(istacr)
+tst <- get_indicators()
+str(tst, max.level = 1)
+```
+
+Get information of a specific indicator:
+
+```{r example2}
+tst <- get_indicators_code("TURISTAS")
+str(tst, max.level = 1)
+```
+
+Or about geographical granularities:
+
+```{r example3}
+# Get granularities
+tst <- get_indicators_geographic_granularities()
+tst$items
+
+# Get information about a specific granularity
+get_indicators_geographical_values('ISLANDS')
+```
+
+
+### Statistical resources
+
+Get all available cubes:
+
+```{r example4}
+tst <- get_datasets()
+str(tst, max.level = 1)
+```
+
+Only those from a specific maintainer:
+
+```{r example5}
+tst <- get_datasets_agency('ISTAC')
+str(tst, max.level = 1)
+```
+
+
+### Structural resources
+
+```{r example6}
+tst <- istacr::get_structuralresources_codelists()
+tst$codelist$id
+```
+
+
+```{r example7}
+tst <- get_structuralresources_codelists_agency_resource('ISTAC', 'CL_ABANDONO_CULTIVO')
+tst$codelist
+```
+
+
+## Further information
+
+Please find the latest documentation on [CRAN](https://cran.r-project.org/web/packages/istacr/istacr.pdf). In case you want to report a bug, please open an [issue](https://github.com/eDatos/istacr/issues).

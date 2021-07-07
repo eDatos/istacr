@@ -25,6 +25,6 @@ This function returns the content from /v1.0/conceptschemes/{agencyID}/{resource
 }
 \examples{
 get_structuralresources_concept_schemes_agency_resource_version_concepts_id(
-   agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0
+  agencyID = "ISTAC", resourceID = "CL_AREA_ES", version = "01.000", conceptID = 0
 )
 }

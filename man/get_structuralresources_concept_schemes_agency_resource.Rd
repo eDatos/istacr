@@ -31,6 +31,6 @@ This function returns the content from /v1.0/conceptschemes/{agencyID}/{resource
 }
 \examples{
 get_structuralresources_concept_schemes_agency_resource(
-   agencyID = "ISTAC", resourceID = "CL_AREA_ES"
+  agencyID = "ISTAC", resourceID = "CL_AREA_ES"
 )
 }
