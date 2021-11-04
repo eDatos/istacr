@@ -25,7 +25,6 @@ build_query <- function(query_list) {
       result <- paste0(result, '&', names(element), '=', element[[1]])
     }
   }
-
   result
 }
 
@@ -56,9 +55,58 @@ get_content <- function(url) {
       content <- NULL
       print(w)
     }
-
   )
-
   return(content)
+}
 
+
+get_codelists_from_api_response <- function(api_response) {
+  dimensions = api_response[["metadata"]][["dimensions"]][["dimension"]]
+  codelists = list()
+  for (dimension_index in 1:nrow(dimensions)) {
+    dimension = dimensions[dimension_index, ]
+    dimension_id = dimension['id']
+    dimension_values = dimension$dimensionValues$value[[1]]
+    codelist = list()
+    for(dimension_value_index in 1:nrow(dimension_values)) {
+      dimension_value = dimension_values[dimension_value_index,]
+      value_id = dimension_value$id
+      value_text = dimension_value$name$text[[1]]$value
+      append(codelist, value_id = value_text)
+    }
+    codelists[dimension_id] = codelist
+  }
+  codelists
+}
+
+convert_api_response_to_dataframe <- function(api_response) {
+  dimensions = api_response['data']['dimensions']['dimension']
+  observations = api_response['data']['observations']
+  observations = re.split(r'\s*\|\s*', observations)
+
+  dimension_codes = []
+  dimension_titles = []
+
+  for(dimension in dimensions) {
+    dimension_titles.append(dimension['dimensionId'])
+    representations = dimension['representations']['representation']
+    codes = [r['code'] for r in sorted(representations, key=lambda c: c['index'])]
+    dimension_codes.append(codes)
+  }
+
+  dimension_codes_product = itertools.product(*dimension_codes)
+  data = [dim + (obs,) for dim, obs in zip(dimension_codes_product, observations)]
+  columns = dimension_titles + ['OBSERVACIONES']
+
+  return pd.DataFrame(data, columns=columns)
+
+}
+
+build_resolved_api_response <- function(api_response) {
+  return(
+    {
+      dataframe = convert_api_response_to_dataframe(api_response),
+      codelists = get_codelists_from_api_response(api_response)
+    }
+  )
 }
