@@ -81,32 +81,27 @@ get_codelists_from_api_response <- function(api_response) {
 }
 
 convert_api_response_to_dataframe <- function(api_response) {
-  dimensions = api_response[["data"]][["dimensions"]][["dimension"]]
   observations = api_response[["data"]][["observations"]]
-  #observations = re.split(r'\s*\|\s*', observations)
-  observations <- strsplit(observations, " \\| ")
-  dimension_codes = data.frame()
-  dimension_titles = list()
+  observations <- strsplit(observations, "\\|")[[1]]
+  observations <- data.frame(OBSERVACIONES = trimws(observations))
 
-  data = data.frame(OBSERVACIONES = observations)
+  dimensions = api_response[["data"]][["dimensions"]][["dimension"]]
+  dimension_codes = data.frame()
   for(dimension_index in 1:nrow(dimensions)) {
     dimension = dimensions[dimension_index, ]
-    dimension_titles[dimension_index] = dimension$dimensionId
-    dimension_title = dimension$dimensionId
-    representations = dimension$representations$representation[[1]]
-    #codes = [r['code'] for r in sorted(representations, key=lambda c: c['index'])]
-    #append(dimension_codes, representations$code)
-    data <- rbind(data, data.frame( get('dimension_title') = representations$code))
-    #rbind(dimension_codes, representations$code)
-    #dimension_codes.append(codes)
+    representation = dimension$representations$representation[[1]]
+    codes <- data.frame(representation$code)
+    names(codes) <- dimension_title
+    if (length(dimension_codes) > 0) {
+      dimension_codes <- merge(codes, dimension_codes, by= NULL)
+    } else {
+      dimension_codes <- data.frame(codes)
+    }
   }
+  dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
+  names(dimension_codes) <- dimensions$dimensionId
 
-  #dimension_codes_product = itertools.product(*dimension_codes)
-  #data = [dim + (obs,) for dim, obs in zip(dimension_codes_product, observations)]
-  #columns = dimension_titles + ['OBSERVACIONES']
-
-  #return pd.DataFrame(data, columns=columns)
-  data
+  data.frame(dimension_codes, observations)
 }
 
 build_resolved_api_response <- function(api_response) {
