@@ -1,4 +1,5 @@
 #source('utils/config.R')
+require(jsonlite)
 
 API_ROOT_URL = 'https://datos.canarias.es/api/estadisticas/'
 API_VERSION = '1.0'
@@ -65,48 +66,54 @@ get_codelists_from_api_response <- function(api_response) {
   codelists = list()
   for (dimension_index in 1:nrow(dimensions)) {
     dimension = dimensions[dimension_index, ]
-    dimension_id = dimension['id']
+    dimension_id = dimension$id
     dimension_values = dimension$dimensionValues$value[[1]]
-    codelist = list()
+    codelist = data.frame()
     for(dimension_value_index in 1:nrow(dimension_values)) {
       dimension_value = dimension_values[dimension_value_index,]
       value_id = dimension_value$id
       value_text = dimension_value$name$text[[1]]$value
-      append(codelist, value_id = value_text)
+      codelist <- rbind(codelist, data.frame(id = value_id, value = value_text))
     }
-    codelists[dimension_id] = codelist
+    codelists[[dimension_id]] = codelist
   }
   codelists
 }
 
 convert_api_response_to_dataframe <- function(api_response) {
-  dimensions = api_response['data']['dimensions']['dimension']
-  observations = api_response['data']['observations']
-  observations = re.split(r'\s*\|\s*', observations)
+  dimensions = api_response[["data"]][["dimensions"]][["dimension"]]
+  observations = api_response[["data"]][["observations"]]
+  #observations = re.split(r'\s*\|\s*', observations)
+  observations <- strsplit(observations, " \\| ")
+  dimension_codes = data.frame()
+  dimension_titles = list()
 
-  dimension_codes = []
-  dimension_titles = []
-
-  for(dimension in dimensions) {
-    dimension_titles.append(dimension['dimensionId'])
-    representations = dimension['representations']['representation']
-    codes = [r['code'] for r in sorted(representations, key=lambda c: c['index'])]
-    dimension_codes.append(codes)
+  data = data.frame(OBSERVACIONES = observations)
+  for(dimension_index in 1:nrow(dimensions)) {
+    dimension = dimensions[dimension_index, ]
+    dimension_titles[dimension_index] = dimension$dimensionId
+    dimension_title = dimension$dimensionId
+    representations = dimension$representations$representation[[1]]
+    #codes = [r['code'] for r in sorted(representations, key=lambda c: c['index'])]
+    #append(dimension_codes, representations$code)
+    data <- rbind(data, data.frame( get('dimension_title') = representations$code))
+    #rbind(dimension_codes, representations$code)
+    #dimension_codes.append(codes)
   }
 
-  dimension_codes_product = itertools.product(*dimension_codes)
-  data = [dim + (obs,) for dim, obs in zip(dimension_codes_product, observations)]
-  columns = dimension_titles + ['OBSERVACIONES']
+  #dimension_codes_product = itertools.product(*dimension_codes)
+  #data = [dim + (obs,) for dim, obs in zip(dimension_codes_product, observations)]
+  #columns = dimension_titles + ['OBSERVACIONES']
 
-  return pd.DataFrame(data, columns=columns)
-
+  #return pd.DataFrame(data, columns=columns)
+  data
 }
 
 build_resolved_api_response <- function(api_response) {
   return(
-    {
+    list(
       dataframe = convert_api_response_to_dataframe(api_response),
       codelists = get_codelists_from_api_response(api_response)
-    }
+    )
   )
 }
