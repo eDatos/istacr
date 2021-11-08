@@ -26,7 +26,7 @@ build_query <- function(query_list) {
       result <- paste0(result, '&', names(element), '=', element[[1]])
     }
   }
-  result
+  URLencode(result)
 }
 
 get_content <- function(url) {
@@ -91,7 +91,7 @@ convert_api_response_to_dataframe <- function(api_response) {
     dimension = dimensions[dimension_index, ]
     representation = dimension$representations$representation[[1]]
     codes <- data.frame(representation$code)
-    names(codes) <- dimension_title
+    names(codes) <- dimension$dimensionId
     if (length(dimension_codes) > 0) {
       dimension_codes <- merge(codes, dimension_codes, by= NULL)
     } else {
