@@ -80,6 +80,20 @@ get_codelists_from_api_response <- function(api_response) {
   codelists
 }
 
+get_codelists_from_indicators_api_response <- function(api_response) {
+  dimensions = api_response$dimension
+  codelists = list()
+  for (dimension_index in 1:length(dimensions)) {
+    dimension = dimensions[dimension_index][[1]]
+    dimension_id = names(dimensions[dimension_index])
+    dimension_values = names(dimension$representation$index)
+    codelist = data.frame()
+    codelist <- rbind(codelist, data.frame(code = dimension_values))
+    codelists[[dimension_id]] = codelist
+  }
+  codelists
+}
+
 convert_api_response_to_dataframe <- function(api_response) {
   observations = api_response[["data"]][["observations"]]
   observations <- strsplit(observations, "\\|")[[1]]
@@ -104,11 +118,43 @@ convert_api_response_to_dataframe <- function(api_response) {
   data.frame(dimension_codes, observations)
 }
 
+convert_indicators_api_response_to_dataframe <- function(api_response) {
+  observations = api_response$observation
+  observations <- data.frame(OBSERVACIONES = trimws(observations))
+
+  dimensions = api_response$dimension
+  dimension_codes = data.frame()
+  for(dimension_index in 1:length(dimensions)) {
+    dimension = dimensions[dimension_index][[1]]
+    representation = dimension$representation
+    codes <- data.frame(names(representation$index))
+    names(codes) <- names(dimensions[dimension_index])
+    if (length(dimension_codes) > 0) {
+      dimension_codes <- merge(codes, dimension_codes, by= NULL)
+    } else {
+      dimension_codes <- data.frame(codes)
+    }
+  }
+  dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
+  names(dimension_codes) <- dimensions$dimensionId
+
+  data.frame(dimension_codes, observations)
+}
+
 build_resolved_api_response <- function(api_response) {
   return(
     list(
       dataframe = convert_api_response_to_dataframe(api_response),
       codelists = get_codelists_from_api_response(api_response)
+    )
+  )
+}
+
+build_resolved_indicators_api_response <- function(api_response) {
+  return(
+    list(
+      dataframe = convert_indicators_api_response_to_dataframe(api_response),
+      codelists = get_codelists_from_indicators_api_response(api_response)
     )
   )
 }

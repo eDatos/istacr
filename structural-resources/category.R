@@ -1,24 +1,6 @@
 API = 'structural-resources'
 
 get_structuralresources_categorisations <- function(limit=25, offset=0, query='', orderby='') {
-  """Get categorisations
-
-    This function returns the content from ``/v1.0/categorisations``
-
-    Args:
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned.  By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_categorisations()
-        >>> get_structuralresources_categorisations(
-        ...     query="ID EQ 2090",
-        ...     orderby="ID ASC"
-        ... )
-    """
   path = 'categorisations'
   url = build_entrypoint_url(
     API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
@@ -26,254 +8,68 @@ get_structuralresources_categorisations <- function(limit=25, offset=0, query=''
   get_content(url)
 }
 
+get_structuralresources_categorisations_agency <- function(agencyid, limit=25, offset=0, query='', orderby='') {
+  path = paste('categorisations', agencyid, sep = '/')
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
-def get_structuralresources_categorisations_agency(
-  agencyid, limit=25, offset=0, query='', orderby=''
-):
-  """Get categorisations agency
+get_structuralresources_categorisations_agency_resource <- function(agencyid, resourceid, limit=25, offset=0, query='', orderby='') {
+  path = paste('categorisations', agencyid, resourceid, sep = '/')
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
-    This function returns the content from ``/v1.0/categorisations/{agencyID}``
+get_structuralresources_categorisations_agency_resource_version <- function(agencyid, resourceid, version) {
+  path = paste('categorisations', agencyid, resourceid, version, sep = '/')
+  url = build_entrypoint_url(API, path)
+  get_content(url)
+}
 
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned.  By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
+get_structuralresources_category_schemes <- function(limit=25, offset=0, query='', orderby='') {
+  path = 'categoryschemes'
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
-    Examples:
-        >>> get_structuralresources_categorisations_agency("ISTAC")
-    """
-path = '/'.join(['categorisations', agencyid])
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
+get_structuralresources_category_schemes_agency <- function(agencyid, limit=25, offset=0, query='', orderby='') {
+path = paste('categoryschemes', agencyid, sep = '/')
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
+get_structuralresources_category_schemes_agency_resource <- function(agencyid, resourceid, limit=25, offset=0, query='', orderby='') {
+  path = paste('categoryschemes', agencyid, resourceid, sep = '/')
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
-def get_structuralresources_categorisations_agency_resource(
-  agencyid, resourceid, limit=25, offset=0, query='', orderby=''
-):
-  """Get categorisations agency resource
+get_structuralresources_category_schemes_agency_resource_version <- function(agencyid, resourceid, version) {
+  path = paste('categoryschemes', agencyid, resourceid, version, sep = '/')
+  url = build_entrypoint_url(API, path)
+  get_content(url)
+}
 
-    This function returns the content from ``/v1.0/categorisations/{agencyID}/{resourceID}``
+get_structuralresources_category_schemes_agency_resource_version_categories <- function(agencyid, resourceid, version, limit=25, offset=0, query='', orderby='') {
+  path = paste('categoryschemes', agencyid, resourceid, version, 'categories', sep = '/')
+  url = build_entrypoint_url(
+    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+  )
+  get_content(url)
+}
 
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned.  By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_categorisations_agency_resource("ISTAC", "cat2")
-    """
-path = '/'.join(['categorisations', agencyid, resourceid])
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
-
-
-def get_structuralresources_categorisations_agency_resource_version(
-  agencyid, resourceid, version
-):
-  """Get categorisations agency resource version
-
-    This function returns the content from
-    ``/v1.0/categorisations/{agencyID}/{resourceID}/{version}``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        version (string): Specific version of the resource.
-
-    Examples:
-        >>> get_structuralresources_categorisations_agency_resource_version(
-        ...     "ISTAC",
-        ...     "cat2",
-        ...     "01.000"
-        ... )
-    """
-path = '/'.join(['categorisations', agencyid, resourceid, version])
-url = services.build_entrypoint_url(API, path)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes(limit=25, offset=0, query='', orderby=''):
-  """Get category schemes
-
-    This function returns the content from ``/v1.0/categoryschemes``
-
-    Args:
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned.  By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_category_schemes()
-        >>> get_structuralresources_category_schemes(
-        ...    query="ID EQ 2090",
-        ...    orderby="ID ASC"
-        ... )
-    """
-path = 'categoryschemes'
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes_agency(
-  agencyid, limit=25, offset=0, query='', orderby=''
-):
-  """Get category schemes agency
-
-    This function returns the content from ``/v1.0/categoryschemes/{agencyID}``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned.  By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_category_schemes_agency(
-        ...     "ISTAC",
-        ...     query="ID EQ 2090",
-        ...     orderby="ID ASC"
-        ...)
-    """
-path = '/'.join(['categoryschemes', agencyid])
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes_agency_resource(
-  agencyid, resourceid, limit=25, offset=0, query='', orderby=''
-):
-  """Get category schemes agency resource
-
-    This function returns the content from ``/v1.0/categoryschemes/{agencyID}/{resourceID}``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned. By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_category_schemes_agency_resource(
-        ...     "ISTAC",
-        ...     "TEMAS_CANARIAS"
-        ... )
-    """
-path = '/'.join(['categoryschemes', agencyid, resourceid])
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes_agency_resource_version(
-  agencyid, resourceid, version
-):
-  """Get category schemes agency resource version
-
-    This function returns the content from
-    ``/v1.0/categoryschemes/{agencyID}/{resourceID}/{version}``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        version (string): Specific version of the resource.
-
-    Examples:
-        >>> get_structuralresources_category_schemes_agency_resource_version(
-        ...     "ISTAC",
-        ...     "TEMAS_CANARIAS",
-        ...     "01.000"
-        ... )
-    """
-path = '/'.join(['categoryschemes', agencyid, resourceid, version])
-url = services.build_entrypoint_url(API, path)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes_agency_resource_version_categories(
-  agencyid, resourceid, version, limit=25, offset=0, query='', orderby=''
-):
-  """Get category schemes agency resource version categories
-
-    This function returns the content from
-    ``/v1.0/categoryschemes/{agencyID}/{resourceID}/{version}/categories``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        version (string): Specific version of the resource.
-        limit (int): Results limit. By default ``limit = 25``.
-        offset (int): Displacement. Result from which it is returned. By default
-            ``offset = 0``.
-        query (string): Query to filter the results.
-        orderby (string): Field by which to sort the results.
-
-    Examples:
-        >>> get_structuralresources_category_schemes_agency_resource_version_categories(
-        ...     "ISTAC",
-        ...     "TEMAS_CANARIAS",
-        ...     "01.000"
-        ... )
-    """
-path = '/'.join(['categoryschemes', agencyid, resourceid, version, 'categories'])
-url = services.build_entrypoint_url(
-  API, path, limit=limit, offset=offset, query=query, orderBy=orderby
-)
-return services.get_content(url)
-
-
-def get_structuralresources_category_schemes_agency_resource_version_categories_id(
-  agencyid, resourceid, version, categoryid
-):
-  """Get category schemes agency resource version categories (id)
-
-    This function returns the content from
-    ``/v1.0/categoryschemes/{agencyID}/{resourceID}/{version}/categories/{categoryID}``
-
-    Args:
-        agencyid (string): Identifier of the agency that publishes.
-        resourceid (string): Resource identifier.
-        version (string): Specific version of the resource.
-        categoryid (string): category identifier
-
-    Examples:
-        >>> get_structuralresources_category_schemes_agency_resource_version_categories_id(
-        ...     "ISTAC",
-        ...     "TEMAS_CANARIAS",
-        ...     "01.000",
-        ...     "060"
-        ... )
-        >>> get_structuralresources_category_schemes_agency_resource_version_categories_id(
-        ...     "ISTAC",
-        ...     "TEMAS_CANARIAS",
-        ...     "01.000",
-        ...     "060.060_010.060_010_010"
-        ... )
-    """
-path = '/'.join(
-  ['categoryschemes', agencyid, resourceid, version, 'categories', categoryid]
-)
-url = services.build_entrypoint_url(API, path)
-return services.get_content(url)
+get_structuralresources_category_schemes_agency_resource_version_categories_id <- function(agencyid, resourceid, version, categoryid) {
+  path = paste('categoryschemes', agencyid, resourceid, version, 'categories', categoryid, sep = '/')
+  url = build_entrypoint_url(API, path)
+  get_content(url)
+}
