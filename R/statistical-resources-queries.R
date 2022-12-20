@@ -1,6 +1,6 @@
 #source('R/services.R')
 
-API = 'statistical-resources'
+STATISTICAL_RESOURCES_API = 'statistical-resources'
 
 #' @title Get queries
 #' @description This function allows consulting all existing statistical queries.
@@ -10,12 +10,12 @@ API = 'statistical-resources'
 #' @param orderby (string): Order. Possible values are ``ID ASC`` or ``ID DESC``,
 #' @param query (string): Metadata query on which the searches can be built.
 #' @examples
-#' get_statisticalresources_datasets()
+#' get_statisticalresources_queries(limit=5)
 #' @export
-get_statisticalresources_datasets <- function(lang='es', limit=25, offset=0, orderby='', query='') {
-  path = 'datasets'
+get_statisticalresources_queries <- function(lang='es', limit=25, offset=0, orderby='', query='') {
+  path = 'queries'
   url = build_entrypoint_url(
-    API, path, query_list = list(lang=lang, limit=limit, offset=offset, orderBy=orderby, query=query)
+    STATISTICAL_RESOURCES_API, path, query_list = list(lang=lang, limit=limit, offset=offset, orderBy=orderby, query=query)
   )
   get_content(url)
 }
@@ -29,18 +29,18 @@ get_statisticalresources_datasets <- function(lang='es', limit=25, offset=0, ord
 #' @param orderby (string): Order. Possible values are ``ID ASC`` or ``ID DESC``,
 #' @param query (string): Metadata query on which the searches can be built.
 #' @examples
-#' get_statisticalresources_queries_agency(agencyid="ISTAC")
+#' get_statisticalresources_queries_agency(agencyid="ISTAC", limit=5)
 #' @export
 get_statisticalresources_queries_agency <- function(agencyid, lang='es', limit=25, offset=0, orderby='', query='') {
   path = paste0('queries/', agencyid)
-  url = build_entrypoint_url(API, path, list(lang=lang, limit=limit, offset=offset, orderBy=orderby, query=query))
+  url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, list(lang=lang, limit=limit, offset=offset, orderBy=orderby, query=query))
   get_content(url)
 }
 
 #' @title Get queries (agencyID / resourceID)
 #' @description This function allows to obtain final data of a statistical query with a certain identifier and that also maintains a certain organization.
 #' @param agencyid (string): Identifier of the maintainer organization of the resource. A possible value is ``ISTAC``.
-#' @param resourceid (string): Resource identifier. A possible value is ``C00010A_000002``.
+#' @param resourceid (string): Resource identifier. A possible value is ``C00005A_000004``.
 #' @param fields (string): Allows you to customize the response by excluding fields from it.
 #'   - The possible values are ``-metadata`` and ``-data``.
 #' @param lang (string): Language in which you want to get the answer.
@@ -50,12 +50,12 @@ get_statisticalresources_queries_agency <- function(agencyid, lang='es', limit=2
 #' @examples
 #' get_statisticalresources_queries_agency_resource(
 #' agencyid="ISTAC",
-#' resourceid="C00017A_000001"
+#' resourceid="C00005A_000004"
 #' )
 #' @export
 get_statisticalresources_queries_agency_resource <- function(agencyid,  resourceid, fields='', lang='es', as_dataframe=FALSE) {
   path = paste0('queries/', agencyid, '/', resourceid)
-  url = build_entrypoint_url(API, path, list(fields=fields, lang=lang))
+  url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, list(fields=fields, lang=lang))
   api_response = get_content(url)
   if(as_dataframe) {
     return(build_resolved_api_response(api_response))

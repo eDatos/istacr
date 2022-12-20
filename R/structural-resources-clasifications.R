@@ -1,6 +1,6 @@
 #source('R/services.R')
 
-API = 'structural-resources'
+STRUCTURAL_RESOURCES_API = 'structural-resources'
 
 #' @title Get codelist families
 #' @description This function returns the list of families of classifications
@@ -14,7 +14,7 @@ API = 'structural-resources'
 get_structuralresources_codelist_families <- function(limit=25, offset=0, orderby='', query='') {
   path = 'codelistfamilies'
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, orderBy=orderby, query=query)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, orderBy=orderby, query=query)
   )
   get_content(url)
 }
@@ -27,7 +27,7 @@ get_structuralresources_codelist_families <- function(limit=25, offset=0, orderb
 #' @export
 get_structuralresources_codelist_families_id <- function(id) {
   path = paste('codelistfamilies', id, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
 }
 
@@ -43,7 +43,7 @@ get_structuralresources_codelist_families_id <- function(id) {
 get_structuralresources_codelists <- function(limit=25, offset=0, query='', orderby='') {
   path = 'codelists'
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -62,7 +62,7 @@ get_structuralresources_codelists <- function(limit=25, offset=0, query='', orde
 get_structuralresources_codelists_agency <- function(agencyid, limit=25, offset=0, query='', orderby='') {
   path = paste('codelists', agencyid, sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -82,7 +82,7 @@ get_structuralresources_codelists_agency <- function(agencyid, limit=25, offset=
 get_structuralresources_codelists_agency_resource <- function(agencyid, resourceid, limit=25, offset=0, query='', orderby='') {
   path = paste('codelists', agencyid, resourceid, sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -101,7 +101,7 @@ get_structuralresources_codelists_agency_resource <- function(agencyid, resource
 #' @export
 get_structuralresources_codelists_agency_resource_version <- function(agencyid, resourceid, version) {
   path = paste('codelists', agencyid, resourceid, version, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
 }
 
@@ -129,7 +129,7 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
 get_structuralresources_codelists_agency_resource_version_codes <- function(agencyid, resourceid, version, limit=25, offset=0, query='', orderby='', openness='', order='', fields='') {
   path = paste('codelists', agencyid, resourceid, version, 'codes', sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby, openness=openness, order=order, fields=fields)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby, openness=openness, order=order, fields=fields)
   )
   get_content(url)
 }
@@ -146,6 +146,6 @@ get_structuralresources_codelists_agency_resource_version_codes <- function(agen
 #' @export
 get_structuralresources_codelists_agency_resource_version_codes_codeid <- function(agencyid, resourceid, version, codeid) {
   path = paste('codelists', agencyid, resourceid, version, 'codes', codeid, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
 }

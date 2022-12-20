@@ -1,6 +1,6 @@
 #source('R/services.R')
 
-API = 'indicators'
+INDICATORS_API = 'indicators'
 
 #' @title Get indicators
 #' @description This function returns a list of indicators published in the ISTAC-indicators database.
@@ -23,7 +23,7 @@ API = 'indicators'
 get_indicators <- function(q='', order='', limit=25, offset=0, fields='', representation='') {
   path = 'indicators'
   url = build_entrypoint_url(
-    API,path, query_list = list(q=q, order=order, limit=limit, offset=offset, fields=fields, representation=representation)
+    INDICATORS_API,path, query_list = list(q=q, order=order, limit=limit, offset=offset, fields=fields, representation=representation)
   )
   get_content(url)
 }
@@ -39,7 +39,7 @@ get_indicators <- function(q='', order='', limit=25, offset=0, fields='', repres
 #' @export
 get_indicators_code <- function(indicatorcode) {
   path = paste('indicators', indicatorcode, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(INDICATORS_API, path)
   get_content(url)
 }
 
@@ -62,7 +62,7 @@ get_indicators_code <- function(indicatorcode) {
 get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=F) {
   path = paste('indicators', indicatorcode, 'data', sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(representation=representation, granularity=granularity, fields=fields)
+    INDICATORS_API, path, query_list = list(representation=representation, granularity=granularity, fields=fields)
   )
   api_response = get_content(url)
   if(as_dataframe) {
