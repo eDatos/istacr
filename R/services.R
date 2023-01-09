@@ -137,7 +137,6 @@ convert_indicators_api_response_to_dataframe <- function(api_response) {
     }
   }
   dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
-  names(dimension_codes) <- dimensions$dimensionId
 
   data.frame(dimension_codes, observations)
 }
