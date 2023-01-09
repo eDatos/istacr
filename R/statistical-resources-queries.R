@@ -53,7 +53,7 @@ get_statisticalresources_queries_agency <- function(agencyid, lang='es', limit=2
 #' resourceid="C00005A_000004"
 #' )
 #' @export
-get_statisticalresources_queries_agency_resource <- function(agencyid,  resourceid, fields='', lang='es', as_dataframe=FALSE) {
+get_statisticalresources_queries_agency_resource <- function(agencyid,  resourceid, fields='', lang='es', as_dataframe=T) {
   path = paste0('queries/', agencyid, '/', resourceid)
   url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, list(fields=fields, lang=lang))
   api_response = get_content(url)

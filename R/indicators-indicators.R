@@ -59,7 +59,7 @@ get_indicators_code <- function(indicatorcode) {
 #' @examples
 #' get_indicators_code_data("AFILIACIONES")
 #' @export
-get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=F) {
+get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=T) {
   path = paste('indicators', indicatorcode, 'data', sep = '/')
   url = build_entrypoint_url(
     INDICATORS_API, path, query_list = list(representation=representation, granularity=granularity, fields=fields)

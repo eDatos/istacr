@@ -85,7 +85,7 @@ get_statisticalresources_datasets_agency_resource <- function(agencyid, resource
 #' version="001.000",
 #' dim="TIME_PERIOD:2009")
 #' @export
-get_statisticalresources_datasets_agency_resource_version <- function(agencyid, resourceid, version, dim='', fields='', lang='es', as_dataframe=F) {
+get_statisticalresources_datasets_agency_resource_version <- function(agencyid, resourceid, version, dim='', fields='', lang='es', as_dataframe=T) {
   path = paste('datasets', agencyid, resourceid, version, sep = "/")
   url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, query_list = list(dim=dim, fields=fields, lang=lang))
   api_response = get_content(url)
