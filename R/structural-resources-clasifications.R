@@ -105,6 +105,49 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
   get_content(url)
 }
 
+
+#' @title Get codelists agency resource version restrictions
+#' @description This function allows you to consult any restrictions for a specific code of a version of a classification.
+#' @param agencyid (string): Agency identificator.
+#' @param resourceid (string): Resource identificator.
+#' @param version (string): Specific resource version.
+#' @param codeid (string): Code identificator.
+#' @examples
+#' get_structuralresources_codelists_agency_resource_version_restrictions(
+#' "ISTAC",
+#' "CL_AREA_ES",
+#' "~latest"
+#' )
+#' @export
+get_structuralresources_codelists_agency_resource_version_restrictions <- function(agencyid, resourceid, version) {
+  path = paste('codelists', agencyid, resourceid, version, 'restrictions', sep = '/')
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
+  get_content(url)
+}
+
+#' @title Get codelists agency resource version restrictions
+#' @description This function allows to consult a specific code of a version of a classification.
+#' @param agencyid (string): Agency identificator.
+#' @param resourceid (string): Resource identificator.
+#' @param version (string): Specific resource version.
+#' @param codeid (string): Code identificator.
+#' @examples
+#' get_structuralresources_codelists_agency_resource_version_recode(
+#' "ISTAC",
+#' "CL_AREA_ES",
+#' "01.001",
+#' "ISTAC",
+#' "CL_AREA_ES",
+#' "~latest"
+#' )
+#' @export
+get_structuralresources_codelists_agency_resource_version_recode <- function(agencyid, resourceid, version, referenceagencyid, referenceresourceid, referenceversion) {
+  path = paste('codelists', agencyid, resourceid, paste(version, ':recode', sep = ''), sep = '/')
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path,
+                             query_list = list(referenceAgencyID=referenceagencyid, referenceResourceID=referenceresourceid, referenceVersion=referenceversion))
+  get_content(url)
+}
+
 #' @title Get codelists agency resource version codes
 #' @description This function allows to consult the codes of a version of a classification. Note that
 #' if wildcards are used as ``~all`` or one of the ``limit``, ``offset``, ``query`` or
