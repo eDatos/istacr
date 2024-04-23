@@ -116,7 +116,14 @@ convert_api_response_to_dataframe <- function(api_response) {
   dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
   names(dimension_codes) <- dimensions$dimensionId
 
-  data.frame(dimension_codes, observations)
+  result = data.frame(dimension_codes, observations)
+  if ("attributes" %in% names(api_response[["data"]])) {
+    for(attribute_index in 1:nrow(api_response[["data"]][["attributes"]][["attribute"]]["id"])) {
+        result[api_response[["data"]][["attributes"]][["attribute"]][["id"]][attribute_index]] = strsplit(api_response[["data"]][["attributes"]][["attribute"]][["value"]][attribute_index], "\\|")[[1]]
+    }
+  }
+
+  result
 }
 
 convert_indicators_api_response_to_dataframe <- function(api_response) {
