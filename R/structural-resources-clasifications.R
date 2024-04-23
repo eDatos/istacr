@@ -162,6 +162,8 @@ get_structuralresources_codelists_agency_resource_version_recode <- function(age
 #' @param order (string): Order established for visualization.
 #' @param orderby (string): Order established for data.
 #' @param fields (string): Additional fields that you want to show in the answer.
+#' @param lang (string): Language in which you want to get the answer.
+#' @param as_dataframe (bool): If True, this function returns a pandas dataframe built from API response.
 #' @examples
 #' get_structuralresources_codelists_agency_resource_version_codes(
 #' "ISTAC",
@@ -169,12 +171,24 @@ get_structuralresources_codelists_agency_resource_version_recode <- function(age
 #' "01.000"
 #' )
 #' @export
-get_structuralresources_codelists_agency_resource_version_codes <- function(agencyid, resourceid, version, limit=25, offset=0, query='', orderby='', openness='', order='', fields='') {
+get_structuralresources_codelists_agency_resource_version_codes <- function(agencyid, resourceid, version, limit=1000, offset=0, query='', orderby='', openness='', order='', fields='', lang='es', as_dataframe=T) {
   path = paste('codelists', agencyid, resourceid, version, 'codes', sep = '/')
   url = build_entrypoint_url(
     STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby, openness=openness, order=order, fields=fields)
   )
-  get_content(url)
+  api_response = get_content(url)
+
+  if(as_dataframe) {
+    api_response_list = list('1' = api_response)
+    while ("nextLink" %in% names(api_response)) {
+      api_response = get_content(api_response[['nextLink']])
+      list_index = str(length(api_response_list) + 1)
+      api_response_list = append(api_response_list, list(list_index = api_response))
+    }
+    return(build_resolved_codelists_api_response(api_response_list, lang))
+  } else {
+    return(api_response)
+  }
 }
 
 #' @title Get codelists agency resource version codes (codeID)
