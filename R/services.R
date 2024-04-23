@@ -141,6 +141,16 @@ convert_indicators_api_response_to_dataframe <- function(api_response) {
   data.frame(dimension_codes, observations)
 }
 
+convert_codelists_api_response_to_dataframe <- function(api_response, lang) {
+  codes = api_response[["code"]]
+  result = data.frame()
+  for(code_index in 1:nrow(codes)) {
+    lang_index = which(codes[['name']][['text']][[code_index]]['lang'] == lang)
+    result <- rbind(result, data.frame(id = codes[['id']][[code_index]], name = codes[['name']][['text']][[code_index]][['value']][lang_index]))
+  }
+  result
+}
+
 build_resolved_api_response <- function(api_response) {
   return(
     list(
@@ -157,4 +167,12 @@ build_resolved_indicators_api_response <- function(api_response) {
       codelists = get_codelists_from_indicators_api_response(api_response)
     )
   )
+}
+
+build_resolved_codelists_api_response <- function(api_response_list, lang) {
+  codelist = data.frame()
+  for (api_response in api_response_list) {
+    codelist = rbind(codelist, convert_codelists_api_response_to_dataframe(api_response, lang))
+  }
+  codelist
 }
