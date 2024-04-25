@@ -9,7 +9,7 @@ get_indicators_code_data(
   representation = "",
   granularity = "",
   fields = "",
-  as_dataframe = F
+  as_dataframe = T
 )
 }
 \arguments{
@@ -22,9 +22,11 @@ get_indicators_code_data(
 \item{fields}{(string): Allows you to customize the response by excluding fields. The possible values are:}
 
 \item{as_dataframe}{(bool): If True, this function returns a namedtuple with:
-  - dataframe: pandas dataframe built from API response.
-  - codelists: mapping between codes and representations for each column.
-``-observationsMetadata``.}
+\itemize{
+\item dataframe: pandas dataframe built from API response.
+\item codelists: mapping between codes and representations for each column.
+\code{-observationsMetadata}.
+}}
 }
 \description{
 This function returns complete data (for all spacetime) of the indicator.

@@ -18,19 +18,19 @@ get_indicators_systems_code_instances(
 \arguments{
 \item{indicatorsystemcode}{(string): with an indicator system code}
 
-\item{q}{(string): Query of metadata on which the searches can be built are: ``id`` and ``geographicalValue``.}
+\item{q}{(string): Query of metadata on which the searches can be built are: \code{id} and \code{geographicalValue}.}
 
-\item{order}{(string): Order. Possible values are: ``update`` and ``id`` and order criteria are ``ASC`` and ``DESC``.}
+\item{order}{(string): Order. Possible values are: \code{update} and \code{id} and order criteria are \code{ASC} and \code{DESC}.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned.  By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned.  By default \code{offset = 0}.}
 
-\item{fields}{(string): Use of the answer by adding new fields. Possible values are: ``+metadata``, ``+data`` and ``+observationsMetadata``.}
+\item{fields}{(string): Use of the answer by adding new fields. Possible values are: \code{+metadata}, \code{+data} and \code{+observationsMetadata}.}
 
-\item{representation}{(string): Allows filtering the observations by their value. Its use only makes sense when ``+data`` and/or ``+observationsMetadata`` has been included.}
+\item{representation}{(string): Allows filtering the observations by their value. Its use only makes sense when \code{+data} and/or \code{+observationsMetadata} has been included.}
 
-\item{granularity}{(string): Allows to filter the observations through the granularities of the same. Its use only makes sense when ``+data`` and/or ``+observationsMetadata`` has been included.}
+\item{granularity}{(string): Allows to filter the observations through the granularities of the same. Its use only makes sense when \code{+data} and/or \code{+observationsMetadata} has been included.}
 }
 \description{
 This function returns instances of indicators associated with a specific indicator

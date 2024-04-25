@@ -12,7 +12,7 @@ get_structuralresources_variableelements_resource(variableid, resourceid)
 \item{resourceid}{(string): Variable identificator.}
 }
 \description{
-This function returns data from ``/v1.0/variables/{variableID}/variableelements/{resourceID}``
+This function returns data from \verb{/v1.0/variables/\{variableID\}/variableelements/\{resourceID\}}
 }
 \examples{
 get_structuralresources_variableelements_resource("VR_SEXO", "FEMALE")

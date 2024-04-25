@@ -15,16 +15,16 @@ get_structuralresources_categorisations_agency(
 \arguments{
 \item{agencyid}{(string): Identifier of the agency that publishes.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset=0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset=0}.}
 
 \item{query}{(string): Query to filter the results.}
 
 \item{orderby}{(string): Field by which to sort the results.}
 }
 \description{
-This function returns the content from ``/v1.0/categorisations/{agencyID}``
+This function returns the content from \verb{/v1.0/categorisations/\{agencyID\}}
 }
 \examples{
 get_structuralresources_categorisations_agency("ISTAC")

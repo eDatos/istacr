@@ -21,7 +21,7 @@ get_indicators_systems_code_instances_code_data(
 
 \item{granularity}{(string): Allows to filter the observations through the granularities of the same.}
 
-\item{fields}{(string): Allows you to customize the response by excluding fields. The possible values are: ``-observationsMetadata``.}
+\item{fields}{(string): Allows you to customize the response by excluding fields. The possible values are: \code{-observationsMetadata}.}
 }
 \description{
 This function returns metadata of an indicator set associated with a specific indicator

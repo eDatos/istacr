@@ -7,9 +7,9 @@
 get_indicators_systems(limit = 25, offset = 0)
 }
 \arguments{
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 }
 \description{
 This function returns a list of indicator systems published in the ISTAC-indicators

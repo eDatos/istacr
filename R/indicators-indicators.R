@@ -52,10 +52,10 @@ get_indicators_code <- function(indicatorcode) {
 #' @param representation (string): Allows filtering the observations by their value.
 #' @param granularity (string): Allows to filter the observations through the granularities of the same.
 #' @param fields (string): Allows you to customize the response by excluding fields. The possible values are:
+#'   ``-observationsMetadata``.
 #' @param as_dataframe (bool): If True, this function returns a namedtuple with:
 #'   - dataframe: pandas dataframe built from API response.
 #'   - codelists: mapping between codes and representations for each column.
-#' ``-observationsMetadata``.
 #' @examples
 #' get_indicators_code_data("AFILIACIONES")
 #' @export

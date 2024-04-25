@@ -18,7 +18,7 @@ get_structuralresources_content_constraints_agency_resource_version(
 \item{version}{(string): Specific version of the resource.}
 }
 \description{
-This function returns the content from ``/v1.0/contentConstraints/{agencyID}/{resourceID}/{version}``
+This function returns the content from \verb{/v1.0/contentConstraints/\{agencyID\}/\{resourceID\}/\{version\}}
 }
 \examples{
 get_structuralresources_content_constraints_agency_resource_version(

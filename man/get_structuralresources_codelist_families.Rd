@@ -12,9 +12,9 @@ get_structuralresources_codelist_families(
 )
 }
 \arguments{
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 
 \item{orderby}{(string): Field by which to sort the results.}
 

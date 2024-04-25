@@ -10,7 +10,7 @@ get_structuralresources_variable_families_id(id)
 \item{id}{(string): Variable family identificator.}
 }
 \description{
-This function returns data from ``/v1.0/variablefamilies/{id}``
+This function returns data from \verb{/v1.0/variablefamilies/\{id\}}
 }
 \examples{
 get_structuralresources_variable_families_id("VRF_DEMOGRAFICAS")

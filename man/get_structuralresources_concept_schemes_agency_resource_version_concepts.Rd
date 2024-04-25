@@ -22,9 +22,9 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts(
 
 \item{version}{(string): Specific version of the resource.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 
 \item{query}{(string): Query to filter the results.}
 
@@ -34,7 +34,7 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts(
 }
 \description{
 This function returns the content from
-``/v1.0/conceptschemes/{agencyID}/{resourceID}/{version}/concepts``
+\verb{/v1.0/conceptschemes/\{agencyID\}/\{resourceID\}/\{version\}/concepts}
 }
 \examples{
 get_structuralresources_concept_schemes_agency_resource_version_concepts(

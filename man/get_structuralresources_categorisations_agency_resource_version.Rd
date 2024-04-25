@@ -18,7 +18,7 @@ get_structuralresources_categorisations_agency_resource_version(
 \item{version}{(string): Specific version of the resource.}
 }
 \description{
-This function returns the content from ``/v1.0/categorisations/{agencyID}/{resourceID}/{version}``
+This function returns the content from \verb{/v1.0/categorisations/\{agencyID\}/\{resourceID\}/\{version\}}
 }
 \examples{
 get_structuralresources_categorisations_agency_resource_version(

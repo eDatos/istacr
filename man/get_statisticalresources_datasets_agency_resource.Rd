@@ -15,17 +15,17 @@ get_statisticalresources_datasets_agency_resource(
 )
 }
 \arguments{
-\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is ``ISTAC``.}
+\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is \code{ISTAC}.}
 
-\item{resourceid}{(string): Resource identifier. A possible value is ``C00010A_000002``.}
+\item{resourceid}{(string): Resource identifier. A possible value is \code{C00010A_000002}.}
 
 \item{lang}{(string): Language in which you want to get the answer.}
 
-\item{limit}{(int): Results limit. By default ``limit=25``.}
+\item{limit}{(int): Results limit. By default \code{limit=25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset=0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset=0}.}
 
-\item{orderby}{(string): Order. Possible values are ``ID ASC`` or ``ID DESC``.}
+\item{orderby}{(string): Order. Possible values are \verb{ID ASC} or \verb{ID DESC}.}
 
 \item{query}{(string): Metadata query on which the searches can be built.}
 }

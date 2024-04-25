@@ -8,13 +8,15 @@ get_structuralresources_codelists_agency_resource_version_codes(
   agencyid,
   resourceid,
   version,
-  limit = 25,
+  limit = 1000,
   offset = 0,
   query = "",
   orderby = "",
   openness = "",
   order = "",
-  fields = ""
+  fields = "",
+  lang = "es",
+  as_dataframe = T
 )
 }
 \arguments{
@@ -24,9 +26,9 @@ get_structuralresources_codelists_agency_resource_version_codes(
 
 \item{version}{(string): Specific resource version.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 
 \item{query}{(string): Query to filter the results. orderby (string): Field by which to sort the results.}
 
@@ -37,11 +39,15 @@ get_structuralresources_codelists_agency_resource_version_codes(
 \item{order}{(string): Order established for visualization.}
 
 \item{fields}{(string): Additional fields that you want to show in the answer.}
+
+\item{lang}{(string): Language in which you want to get the answer.}
+
+\item{as_dataframe}{(bool): If True, this function returns a pandas dataframe built from API response.}
 }
 \description{
 This function allows to consult the codes of a version of a classification. Note that
-if wildcards are used as ``~all`` or one of the ``limit``, ``offset``, ``query`` or
-``orderBy`` parameters, the list will be automatically paginated.
+if wildcards are used as \code{~all} or one of the \code{limit}, \code{offset}, \code{query} or
+\code{orderBy} parameters, the list will be automatically paginated.
 }
 \examples{
 get_structuralresources_codelists_agency_resource_version_codes(

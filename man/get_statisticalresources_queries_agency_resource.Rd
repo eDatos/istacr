@@ -9,22 +9,26 @@ get_statisticalresources_queries_agency_resource(
   resourceid,
   fields = "",
   lang = "es",
-  as_dataframe = FALSE
+  as_dataframe = T
 )
 }
 \arguments{
-\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is ``ISTAC``.}
+\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is \code{ISTAC}.}
 
-\item{resourceid}{(string): Resource identifier. A possible value is ``C00010A_000002``.}
+\item{resourceid}{(string): Resource identifier. A possible value is \code{C00005A_000004}.}
 
 \item{fields}{(string): Allows you to customize the response by excluding fields from it.
-- The possible values are ``-metadata`` and ``-data``.}
+\itemize{
+\item The possible values are \code{-metadata} and \code{-data}.
+}}
 
 \item{lang}{(string): Language in which you want to get the answer.}
 
 \item{as_dataframe}{(bool): If True, this function returns a namedtuple with:
-- dataframe: pandas dataframe built from API response.
-- codelists: mapping between codes and representations for each column.}
+\itemize{
+\item dataframe: pandas dataframe built from API response.
+\item codelists: mapping between codes and representations for each column.
+}}
 }
 \description{
 This function allows to obtain final data of a statistical query with a certain identifier and that also maintains a certain organization.
@@ -32,6 +36,6 @@ This function allows to obtain final data of a statistical query with a certain 
 \examples{
 get_statisticalresources_queries_agency_resource(
 agencyid="ISTAC",
-resourceid="C00017A_000001"
+resourceid="C00005A_000004"
 )
 }

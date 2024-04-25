@@ -7,7 +7,7 @@
 get_structuralresources_concept_types()
 }
 \description{
-This function returns the content from ``/v1.0/conceptTypes``
+This function returns the content from \verb{/v1.0/conceptTypes}
 }
 \examples{
 get_structuralresources_concept_types()

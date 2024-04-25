@@ -21,9 +21,9 @@ get_structuralresources_geoinfo(
 
 \item{fields}{(string): Additional fields that you want to show in the answer.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 
 \item{query}{(string): Query to filter the results.}
 
@@ -31,7 +31,7 @@ get_structuralresources_geoinfo(
 }
 \description{
 This function returns data from
-``/v1.0/variables/{variableID}/variableelements/{resourceID}/geoinfo``
+\verb{/v1.0/variables/\{variableID\}/variableelements/\{resourceID\}/geoinfo}
 }
 \examples{
 get_structuralresources_geoinfo("VR_TERRITORIO", "MUN_ICOD_VINOS")
