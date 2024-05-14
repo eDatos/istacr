@@ -125,19 +125,21 @@ get_structuralresources_codelists_agency_resource_version_restrictions <- functi
   get_content(url)
 }
 
-#' @title Get codelists agency resource version restrictions
-#' @description This function allows to consult a specific code of a version of a classification.
+#' @title Get codelists agency resource version recode
+#' @description This function allows to see changes between two classifications.
 #' @param agencyid (string): Agency identificator.
 #' @param resourceid (string): Resource identificator.
 #' @param version (string): Specific resource version.
-#' @param codeid (string): Code identificator.
+#' @param referenceagencyid (string): Reference agency identificator.
+#' @param referenceresourceid (string): Reference resource identificator.
+#' @param referenceversion (string): Reference specific resource version.
 #' @examples
 #' get_structuralresources_codelists_agency_resource_version_recode(
 #' "ISTAC",
 #' "CL_AREA_ES",
 #' "01.001",
 #' "ISTAC",
-#' "CL_AREA_ES",
+#' "CL_AREA_ES_RELATIVA",
 #' "~latest"
 #' )
 #' @export
