@@ -122,7 +122,7 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
 get_structuralresources_codelists_agency_resource_version_restrictions <- function(agencyid, resourceid, version) {
   path = paste('codelists', agencyid, resourceid, version, 'restrictions', sep = '/')
   url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
-  get_content(url)
+  get_content(url)$restriction
 }
 
 #' @title Get codelists agency resource version recode
@@ -147,7 +147,7 @@ get_structuralresources_codelists_agency_resource_version_recode <- function(age
   path = paste('codelists', agencyid, resourceid, paste(version, ':recode', sep = ''), sep = '/')
   url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path,
                              query_list = list(referenceAgencyID=referenceagencyid, referenceResourceID=referenceresourceid, referenceVersion=referenceversion))
-  get_content(url)
+  get_content(url)$code
 }
 
 #' @title Get codelists agency resource version codes
