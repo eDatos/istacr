@@ -14,15 +14,15 @@ get_statisticalresources_queries_agency(
 )
 }
 \arguments{
-\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is ``ISTAC``.}
+\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is \code{ISTAC}.}
 
 \item{lang}{(string): Language in which you want to get the answer.}
 
-\item{limit}{(int): Results limit. By default ``limit=25``.}
+\item{limit}{(int): Results limit. By default \code{limit=25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset=0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset=0}.}
 
-\item{orderby}{(string): Order. Possible values are ``ID ASC`` or ``ID DESC``,}
+\item{orderby}{(string): Order. Possible values are \verb{ID ASC} or \verb{ID DESC},}
 
 \item{query}{(string): Metadata query on which the searches can be built.}
 }
@@ -30,5 +30,5 @@ get_statisticalresources_queries_agency(
 This function allows to consult all the queries maintained by a certain organization.
 }
 \examples{
-get_statisticalresources_queries_agency(agencyid="ISTAC")
+get_statisticalresources_queries_agency(agencyid="ISTAC", limit=5)
 }

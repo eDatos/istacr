@@ -1,4 +1,5 @@
 require(jsonlite)
+require(utils)
 
 API_ROOT_URL = 'https://datos.canarias.es/api/estadisticas/'
 API_VERSION = '1.0'
@@ -13,6 +14,7 @@ build_entrypoint_url <- function(api, path, query_list = list()) {
   paste0(API_ROOT_URL, urlpath)
 }
 
+#' @importFrom utils URLencode
 build_query <- function(query_list) {
   result <- ""
   if(length(query_list) > 0) {
@@ -114,7 +116,14 @@ convert_api_response_to_dataframe <- function(api_response) {
   dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
   names(dimension_codes) <- dimensions$dimensionId
 
-  data.frame(dimension_codes, observations)
+  result = data.frame(dimension_codes, observations)
+  if ("attributes" %in% names(api_response[["data"]])) {
+    for(attribute_index in 1:nrow(api_response[["data"]][["attributes"]][["attribute"]]["id"])) {
+        result[api_response[["data"]][["attributes"]][["attribute"]][["id"]][attribute_index]] = strsplit(api_response[["data"]][["attributes"]][["attribute"]][["value"]][attribute_index], "\\|")[[1]]
+    }
+  }
+
+  result
 }
 
 convert_indicators_api_response_to_dataframe <- function(api_response) {
@@ -135,9 +144,18 @@ convert_indicators_api_response_to_dataframe <- function(api_response) {
     }
   }
   dimension_codes <- dimension_codes[,ncol(dimension_codes):1]
-  names(dimension_codes) <- dimensions$dimensionId
 
   data.frame(dimension_codes, observations)
+}
+
+convert_codelists_api_response_to_dataframe <- function(api_response, lang) {
+  codes = api_response[["code"]]
+  result = data.frame()
+  for(code_index in 1:nrow(codes)) {
+    lang_index = which(codes[['name']][['text']][[code_index]]['lang'] == lang)
+    result <- rbind(result, data.frame(id = codes[['id']][[code_index]], name = codes[['name']][['text']][[code_index]][['value']][lang_index]))
+  }
+  result
 }
 
 build_resolved_api_response <- function(api_response) {
@@ -156,4 +174,12 @@ build_resolved_indicators_api_response <- function(api_response) {
       codelists = get_codelists_from_indicators_api_response(api_response)
     )
   )
+}
+
+build_resolved_codelists_api_response <- function(api_response_list, lang) {
+  codelist = data.frame()
+  for (api_response in api_response_list) {
+    codelist = rbind(codelist, convert_codelists_api_response_to_dataframe(api_response, lang))
+  }
+  codelist
 }

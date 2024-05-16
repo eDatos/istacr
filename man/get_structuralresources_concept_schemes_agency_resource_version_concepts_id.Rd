@@ -22,7 +22,7 @@ get_structuralresources_concept_schemes_agency_resource_version_concepts_id(
 }
 \description{
 This function returns the content from
-``/v1.0/conceptschemes/{agencyID}/{resourceID}/{version}/concepts/{conceptID}``
+\verb{/v1.0/conceptschemes/\{agencyID\}/\{resourceID\}/\{version\}/concepts/\{conceptID\}}
 }
 \examples{
 get_structuralresources_concept_schemes_agency_resource_version_concepts_id(

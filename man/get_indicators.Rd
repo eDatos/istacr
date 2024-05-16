@@ -14,17 +14,17 @@ get_indicators(
 )
 }
 \arguments{
-\item{q}{(string): Metadata query on which the searches can be built using ``id``, ``subjectCode`` or ``geographicValue``.}
+\item{q}{(string): Metadata query on which the searches can be built using \code{id}, \code{subjectCode} or \code{geographicValue}.}
 
-\item{order}{(string): Order. Possible values are: ``update`` and ``id``. Order criteria are ``ASC`` and ``DESC``.}
+\item{order}{(string): Order. Possible values are: \code{update} and \code{id}. Order criteria are \code{ASC} and \code{DESC}.}
 
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned.  By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned.  By default \code{offset = 0}.}
 
-\item{fields}{(string): Use of the answer by adding new fields. Possible values are: ``+metadata``, ``+data`` and ``+observationsMetadata``.}
+\item{fields}{(string): Use of the answer by adding new fields. Possible values are: \code{+metadata}, \code{+data} and \code{+observationsMetadata}.}
 
-\item{representation}{(string): Allows filtering the observations by their value. Its use only makes sense when ``+data`` and/or ``+observationsMetadata`` has been included.}
+\item{representation}{(string): Allows filtering the observations by their value. Its use only makes sense when \code{+data} and/or \code{+observationsMetadata} has been included.}
 }
 \description{
 This function returns a list of indicators published in the ISTAC-indicators database.

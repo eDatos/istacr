@@ -11,25 +11,27 @@ get_statisticalresources_datasets_agency_resource_version(
   dim = "",
   fields = "",
   lang = "es",
-  as_dataframe = F
+  as_dataframe = T
 )
 }
 \arguments{
-\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is ``ISTAC``.}
+\item{agencyid}{(string): Identifier of the maintainer organization of the resource. A possible value is \code{ISTAC}.}
 
-\item{resourceid}{(string): Resource identifier. A possible value is ``C00010A_000002``.}
+\item{resourceid}{(string): Resource identifier. A possible value is \code{C00010A_000002}.}
 
-\item{version}{(string): Resource version. A possible value is ``001.000``.}
+\item{version}{(string): Resource version. A possible value is \code{001.000}.}
 
-\item{dim}{(string): Allows filtering the data obtained in the response. A example is ``TIME_PERIOD:2009|2010``.}
+\item{dim}{(string): Allows filtering the data obtained in the response. A example is \code{TIME_PERIOD:2009|2010}.}
 
-\item{fields}{(string): Allows you to customize the response by excluding fields from it. The possible values are ``-metadata`` and ``-data``.}
+\item{fields}{(string): Allows you to customize the response by excluding fields from it. The possible values are \code{-metadata} and \code{-data}.}
 
 \item{lang}{(string): Language in which you want to get the answer.}
 
 \item{as_dataframe}{(bool): If True, this function returns a namedtuple with:
-- dataframe: pandas dataframe built from API response.
-- codelists: mapping between codes and representations for each column.}
+\itemize{
+\item dataframe: pandas dataframe built from API response.
+\item codelists: mapping between codes and representations for each column.
+}}
 }
 \description{
 This function allows to obtain a certain version of a statistical cube with a certain
@@ -38,7 +40,7 @@ identifier and that also maintains a certain organization.
 \examples{
 get_statisticalresources_datasets_agency_resource_version(
 agencyid="ISTAC",
-resourceid="C00010A_000002",
-version="001.000"
-)
+resourceid="C00010A_000012",
+version="001.000",
+dim="TIME_PERIOD:2009")
 }

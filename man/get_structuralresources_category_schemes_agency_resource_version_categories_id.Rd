@@ -21,7 +21,7 @@ get_structuralresources_category_schemes_agency_resource_version_categories_id(
 \item{categoryid}{(string): category identifier.}
 }
 \description{
-This function returns the content from ``/v1.0/categoryschemes/{agencyID}/{resourceID}/{version}/categories/{categoryID}``
+This function returns the content from \verb{/v1.0/categoryschemes/\{agencyID\}/\{resourceID\}/\{version\}/categories/\{categoryID\}}
 }
 \examples{
 get_structuralresources_category_schemes_agency_resource_version_categories_id(

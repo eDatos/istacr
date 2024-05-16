@@ -12,16 +12,16 @@ get_structuralresources_variables(
 )
 }
 \arguments{
-\item{limit}{(int): Results limit. By default ``limit = 25``.}
+\item{limit}{(int): Results limit. By default \code{limit = 25}.}
 
-\item{offset}{(int): Displacement. Result from which it is returned. By default ``offset = 0``.}
+\item{offset}{(int): Displacement. Result from which it is returned. By default \code{offset = 0}.}
 
 \item{query}{(string): Query to filter the results.}
 
 \item{orderby}{(string): Field by which to sort the results.}
 }
 \description{
-This function returns data from ``/v1.0/variables``
+This function returns data from \verb{/v1.0/variables}
 }
 \examples{
 get_structuralresources_variables()

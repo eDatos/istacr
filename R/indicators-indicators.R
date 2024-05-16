@@ -1,6 +1,6 @@
-source('R/services.R')
+#source('R/services.R')
 
-API = 'indicators'
+INDICATORS_API = 'indicators'
 
 #' @title Get indicators
 #' @description This function returns a list of indicators published in the ISTAC-indicators database.
@@ -23,7 +23,7 @@ API = 'indicators'
 get_indicators <- function(q='', order='', limit=25, offset=0, fields='', representation='') {
   path = 'indicators'
   url = build_entrypoint_url(
-    API,path, query_list = list(q=q, order=order, limit=limit, offset=offset, fields=fields, representation=representation)
+    INDICATORS_API,path, query_list = list(q=q, order=order, limit=limit, offset=offset, fields=fields, representation=representation)
   )
   get_content(url)
 }
@@ -39,7 +39,7 @@ get_indicators <- function(q='', order='', limit=25, offset=0, fields='', repres
 #' @export
 get_indicators_code <- function(indicatorcode) {
   path = paste('indicators', indicatorcode, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(INDICATORS_API, path)
   get_content(url)
 }
 
@@ -52,17 +52,17 @@ get_indicators_code <- function(indicatorcode) {
 #' @param representation (string): Allows filtering the observations by their value.
 #' @param granularity (string): Allows to filter the observations through the granularities of the same.
 #' @param fields (string): Allows you to customize the response by excluding fields. The possible values are:
+#'   ``-observationsMetadata``.
 #' @param as_dataframe (bool): If True, this function returns a namedtuple with:
 #'   - dataframe: pandas dataframe built from API response.
 #'   - codelists: mapping between codes and representations for each column.
-#' ``-observationsMetadata``.
 #' @examples
 #' get_indicators_code_data("AFILIACIONES")
 #' @export
-get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=F) {
+get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=T) {
   path = paste('indicators', indicatorcode, 'data', sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(representation=representation, granularity=granularity, fields=fields)
+    INDICATORS_API, path, query_list = list(representation=representation, granularity=granularity, fields=fields)
   )
   api_response = get_content(url)
   if(as_dataframe) {

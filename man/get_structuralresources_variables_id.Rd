@@ -10,7 +10,7 @@ get_structuralresources_variables_id(id)
 \item{id}{(string): Variable identifier.}
 }
 \description{
-This function returns data from ``/v1.0/variables/{id}``
+This function returns data from \verb{/v1.0/variables/\{id\}}
 }
 \examples{
 get_structuralresources_variables_id("VR_SEXO")

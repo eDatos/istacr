@@ -1,6 +1,6 @@
-source('R/services.R')
+#source('R/services.R')
 
-API = 'structural-resources'
+STRUCTURAL_RESOURCES_API = 'structural-resources'
 
 #' @title Get codelist families
 #' @description This function returns the list of families of classifications
@@ -14,7 +14,7 @@ API = 'structural-resources'
 get_structuralresources_codelist_families <- function(limit=25, offset=0, orderby='', query='') {
   path = 'codelistfamilies'
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, orderBy=orderby, query=query)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, orderBy=orderby, query=query)
   )
   get_content(url)
 }
@@ -27,7 +27,7 @@ get_structuralresources_codelist_families <- function(limit=25, offset=0, orderb
 #' @export
 get_structuralresources_codelist_families_id <- function(id) {
   path = paste('codelistfamilies', id, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
 }
 
@@ -43,7 +43,7 @@ get_structuralresources_codelist_families_id <- function(id) {
 get_structuralresources_codelists <- function(limit=25, offset=0, query='', orderby='') {
   path = 'codelists'
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -62,7 +62,7 @@ get_structuralresources_codelists <- function(limit=25, offset=0, query='', orde
 get_structuralresources_codelists_agency <- function(agencyid, limit=25, offset=0, query='', orderby='') {
   path = paste('codelists', agencyid, sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -82,7 +82,7 @@ get_structuralresources_codelists_agency <- function(agencyid, limit=25, offset=
 get_structuralresources_codelists_agency_resource <- function(agencyid, resourceid, limit=25, offset=0, query='', orderby='') {
   path = paste('codelists', agencyid, resourceid, sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby)
   )
   get_content(url)
 }
@@ -101,8 +101,53 @@ get_structuralresources_codelists_agency_resource <- function(agencyid, resource
 #' @export
 get_structuralresources_codelists_agency_resource_version <- function(agencyid, resourceid, version) {
   path = paste('codelists', agencyid, resourceid, version, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
+}
+
+
+#' @title Get codelists agency resource version restrictions
+#' @description This function allows you to consult any restrictions for a specific code of a version of a classification.
+#' @param agencyid (string): Agency identificator.
+#' @param resourceid (string): Resource identificator.
+#' @param version (string): Specific resource version.
+#' @param codeid (string): Code identificator.
+#' @examples
+#' get_structuralresources_codelists_agency_resource_version_restrictions(
+#' "ISTAC",
+#' "CL_AREA_ES",
+#' "~latest"
+#' )
+#' @export
+get_structuralresources_codelists_agency_resource_version_restrictions <- function(agencyid, resourceid, version) {
+  path = paste('codelists', agencyid, resourceid, version, 'restrictions', sep = '/')
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
+  get_content(url)$restriction
+}
+
+#' @title Get codelists agency resource version recode
+#' @description This function allows to see changes between two classifications.
+#' @param agencyid (string): Agency identificator.
+#' @param resourceid (string): Resource identificator.
+#' @param version (string): Specific resource version.
+#' @param referenceagencyid (string): Reference agency identificator.
+#' @param referenceresourceid (string): Reference resource identificator.
+#' @param referenceversion (string): Reference specific resource version.
+#' @examples
+#' get_structuralresources_codelists_agency_resource_version_recode(
+#' "ISTAC",
+#' "CL_AREA_ES",
+#' "01.001",
+#' "ISTAC",
+#' "CL_AREA_ES_RELATIVA",
+#' "~latest"
+#' )
+#' @export
+get_structuralresources_codelists_agency_resource_version_recode <- function(agencyid, resourceid, version, referenceagencyid, referenceresourceid, referenceversion) {
+  path = paste('codelists', agencyid, resourceid, paste(version, ':recode', sep = ''), sep = '/')
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path,
+                             query_list = list(referenceAgencyID=referenceagencyid, referenceResourceID=referenceresourceid, referenceVersion=referenceversion))
+  get_content(url)$code
 }
 
 #' @title Get codelists agency resource version codes
@@ -119,6 +164,8 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
 #' @param order (string): Order established for visualization.
 #' @param orderby (string): Order established for data.
 #' @param fields (string): Additional fields that you want to show in the answer.
+#' @param lang (string): Language in which you want to get the answer.
+#' @param as_dataframe (bool): If True, this function returns a pandas dataframe built from API response.
 #' @examples
 #' get_structuralresources_codelists_agency_resource_version_codes(
 #' "ISTAC",
@@ -126,12 +173,24 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
 #' "01.000"
 #' )
 #' @export
-get_structuralresources_codelists_agency_resource_version_codes <- function(agencyid, resourceid, version, limit=25, offset=0, query='', orderby='', openness='', order='', fields='') {
+get_structuralresources_codelists_agency_resource_version_codes <- function(agencyid, resourceid, version, limit=1000, offset=0, query='', orderby='', openness='', order='', fields='', lang='es', as_dataframe=T) {
   path = paste('codelists', agencyid, resourceid, version, 'codes', sep = '/')
   url = build_entrypoint_url(
-    API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby, openness=openness, order=order, fields=fields)
+    STRUCTURAL_RESOURCES_API, path, query_list = list(limit=limit, offset=offset, query=query, orderBy=orderby, openness=openness, order=order, fields=fields)
   )
-  get_content(url)
+  api_response = get_content(url)
+
+  if(as_dataframe) {
+    api_response_list = list('1' = api_response)
+    while ("nextLink" %in% names(api_response)) {
+      api_response = get_content(api_response[['nextLink']])
+      list_index = str(length(api_response_list) + 1)
+      api_response_list = append(api_response_list, list(list_index = api_response))
+    }
+    return(build_resolved_codelists_api_response(api_response_list, lang))
+  } else {
+    return(api_response)
+  }
 }
 
 #' @title Get codelists agency resource version codes (codeID)
@@ -146,6 +205,6 @@ get_structuralresources_codelists_agency_resource_version_codes <- function(agen
 #' @export
 get_structuralresources_codelists_agency_resource_version_codes_codeid <- function(agencyid, resourceid, version, codeid) {
   path = paste('codelists', agencyid, resourceid, version, 'codes', codeid, sep = '/')
-  url = build_entrypoint_url(API, path)
+  url = build_entrypoint_url(STRUCTURAL_RESOURCES_API, path)
   get_content(url)
 }

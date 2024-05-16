@@ -19,7 +19,7 @@ get_structuralresources_data_structures_agency_resource_version(
 }
 \description{
 This function returns the content from
-``/v1.0/datastructures/{agencyID}/{resourceID}/{version}``
+\verb{/v1.0/datastructures/\{agencyID\}/\{resourceID\}/\{version\}}
 }
 \examples{
 get_structuralresources_data_structures_agency_resource_version(
