@@ -183,3 +183,8 @@ build_resolved_codelists_api_response <- function(api_response_list, lang) {
   }
   codelist
 }
+
+change_api_url <- function(api_root_url) {
+  API_ROOT_URL <<- api_root_url
+  return(API_ROOT_URL)
+}
