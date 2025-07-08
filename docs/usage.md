@@ -10,6 +10,10 @@ The package is divided into several modules depending on the resource you want t
  - [Statistical resources](./src/statistical-resources.md): Datasets and queries of cubes.
  - [Structural resources](./src/structural-resources.md): Categories, schemes, classifications, families and concepts for normalize statistical resources.
 
+## Base URL
+
+The package allows you to consult data from any eDatos API catalog instance. To change default instance (https://datos.canarias.es/api/estadisticas/), use the *change_api_url* method.
+
 ## Package reference
 
 [Package manual (PDF)](../istacr-manual.pdf)
