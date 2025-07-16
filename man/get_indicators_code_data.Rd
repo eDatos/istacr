@@ -19,13 +19,13 @@ get_indicators_code_data(
 
 \item{granularity}{(string): Allows to filter the observations through the granularities of the same.}
 
-\item{fields}{(string): Allows you to customize the response by excluding fields. The possible values are:}
+\item{fields}{(string): Allows you to customize the response by excluding fields. The possible values are:
+\code{-observationsMetadata}.}
 
 \item{as_dataframe}{(bool): If True, this function returns a namedtuple with:
 \itemize{
 \item dataframe: pandas dataframe built from API response.
 \item codelists: mapping between codes and representations for each column.
-\code{-observationsMetadata}.
 }}
 }
 \description{

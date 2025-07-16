@@ -2,7 +2,7 @@
 % Please edit documentation in R/structural-resources-clasifications.R
 \name{get_structuralresources_codelists_agency_resource_version_recode}
 \alias{get_structuralresources_codelists_agency_resource_version_recode}
-\title{Get codelists agency resource version restrictions}
+\title{Get codelists agency resource version recode}
 \usage{
 get_structuralresources_codelists_agency_resource_version_recode(
   agencyid,
@@ -20,10 +20,14 @@ get_structuralresources_codelists_agency_resource_version_recode(
 
 \item{version}{(string): Specific resource version.}
 
-\item{codeid}{(string): Code identificator.}
+\item{referenceagencyid}{(string): Reference agency identificator.}
+
+\item{referenceresourceid}{(string): Reference resource identificator.}
+
+\item{referenceversion}{(string): Reference specific resource version.}
 }
 \description{
-This function allows to consult a specific code of a version of a classification.
+This function allows to see changes between two classifications.
 }
 \examples{
 get_structuralresources_codelists_agency_resource_version_recode(
@@ -31,7 +35,7 @@ get_structuralresources_codelists_agency_resource_version_recode(
 "CL_AREA_ES",
 "01.001",
 "ISTAC",
-"CL_AREA_ES",
+"CL_AREA_ES_RELATIVA",
 "~latest"
 )
 }
