@@ -28,4 +28,4 @@ You can also contact us via email at [edatos.istac@gobiernodecanarias.org](mailt
 
 Copyright Instituto Canario de Estadística (ISTAC), 2024.
 
-Distributed under the terms of the [AGPLv3](LICENSE) license, istacpy is free and open source software.
+Distributed under the terms of the [AGPLv3](LICENSE) license, istacr is free and open source software.
