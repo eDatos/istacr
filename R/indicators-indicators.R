@@ -12,6 +12,7 @@ INDICATORS_API = 'indicators'
 #' @param offset (int): Displacement. Result from which it is returned.  By default ``offset = 0``.
 #' @param fields (string): Use of the answer by adding new fields. Possible values are: ``+metadata``, ``+data`` and ``+observationsMetadata``.
 #' @param representation (string): Allows filtering the observations by their value. Its use only makes sense when ``+data`` and/or ``+observationsMetadata`` has been included.
+#' @import httr
 #' @examples
 #' get_indicators(
 #' q='id IN ("AFILIACIONES", "EMPLEO_REGISTRADO_AGRICULTURA")',
@@ -33,6 +34,7 @@ get_indicators <- function(q='', order='', limit=25, offset=0, fields='', repres
 #' indicator, allowing the compression of the measured fact; also through the data request
 #' the complete data (for all spacetime) of the indicator is provided.
 #' @param indicatorcode (string): an indicator code
+#' @import httr
 #' @examples
 #' get_indicators_code("AFILIACIONES")
 #' get_indicators_code("PARO_REGISTRADO")
@@ -56,6 +58,7 @@ get_indicators_code <- function(indicatorcode) {
 #' @param as_dataframe (bool): If True, this function returns a namedtuple with:
 #'   - dataframe: pandas dataframe built from API response.
 #'   - codelists: mapping between codes and representations for each column.
+#' @import httr
 #' @examples
 #' get_indicators_code_data("AFILIACIONES")
 #' @export
