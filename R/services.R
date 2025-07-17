@@ -17,6 +17,7 @@ build_entrypoint_url <- function(api, path, query_list = list()) {
 }
 
 #' @importFrom utils URLencode
+#' @importFrom utils str
 build_query <- function(query_list) {
   result <- ""
   if(length(query_list) > 0) {
