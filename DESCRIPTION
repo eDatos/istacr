@@ -8,7 +8,7 @@ Authors@R: c(
   )
 Maintainer: Alberto Gonzalez <jgonyanp@gobiernodecanarias.org>
 Description: You can access to open data published in Instituto Canario De Estadistica (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.
-License: GPL (>= 3)
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
