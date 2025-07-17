@@ -111,7 +111,6 @@ get_structuralresources_codelists_agency_resource_version <- function(agencyid, 
 #' @param agencyid (string): Agency identificator.
 #' @param resourceid (string): Resource identificator.
 #' @param version (string): Specific resource version.
-#' @param codeid (string): Code identificator.
 #' @examples
 #' get_structuralresources_codelists_agency_resource_version_restrictions(
 #' "ISTAC",

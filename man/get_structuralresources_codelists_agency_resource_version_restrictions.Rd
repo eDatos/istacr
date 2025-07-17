@@ -16,8 +16,6 @@ get_structuralresources_codelists_agency_resource_version_restrictions(
 \item{resourceid}{(string): Resource identificator.}
 
 \item{version}{(string): Specific resource version.}
-
-\item{codeid}{(string): Code identificator.}
 }
 \description{
 This function allows you to consult any restrictions for a specific code of a version of a classification.
