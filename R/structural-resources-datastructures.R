@@ -83,7 +83,7 @@ get_structuralresources_content_constraints_agency_resource_version <- function(
 
 #' @title Get content constraints agency resource version regions
 #' @description This function returns the content from
-#' ``/v1.0/contentConstraints/{agencyID}/{resourceID}/{version}/regions/``{regionCode}
+#' ``/v1.0/contentConstraints/{agencyID}/{resourceID}/{version}/regions/{regionCode}``
 #' @param regioncode (string) Region code.
 #' @param agencyid (string) Identifier of the agency that publishes.
 #' @param resourceid (string) Resource identifier.

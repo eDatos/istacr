@@ -22,7 +22,7 @@ get_structuralresources_content_constraints_agency_resource_version_regions(
 }
 \description{
 This function returns the content from
-\verb{/v1.0/contentConstraints/\{agencyID\}/\{resourceID\}/\{version\}/regions/}{regionCode}
+\verb{/v1.0/contentConstraints/\{agencyID\}/\{resourceID\}/\{version\}/regions/\{regionCode\}}
 }
 \examples{
 get_structuralresources_content_constraints_agency_resource_version_regions(
