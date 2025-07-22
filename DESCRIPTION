@@ -4,7 +4,10 @@ Title: Obtaining Open Data from Instituto Canario De Estadistica (ISTAC) API
 Version: 0.3.0
 Date: 2025-07-08
 Authors@R: c(
-    person("Alberto", "Gonzalez", email = "jgonyanp@gobiernodecanarias.org", role = c("aut", "cre"))
+    person("Alberto", "Gonzalez", email = "jgonyanp@gobiernodecanarias.org", role = c("aut", "cre"),
+    ),
+    person("Elisa", "Jorge", email = "ejorgon@gobiernodecanarias.org", role = c("aut", "cre"),
+    )
   )
 Maintainer: Alberto Gonzalez <jgonyanp@gobiernodecanarias.org>
 Description: You can access to open data published in Instituto Canario De Estadistica (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.
