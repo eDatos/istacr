@@ -15,6 +15,6 @@ indicator, allowing the compression of the measured fact; also through the data 
 the complete data (for all spacetime) of the indicator is provided.
 }
 \examples{
-get_indicators_code("AFILIACIONES")
+get_indicators_code("IPC")
 get_indicators_code("PARO_REGISTRADO")
 }

@@ -35,5 +35,5 @@ indicator are offered through the metadata request, allowing the compression
 of the measured fact.
 }
 \examples{
-get_indicators_code_data("AFILIACIONES")
+get_indicators_code_data("IPC")
 }

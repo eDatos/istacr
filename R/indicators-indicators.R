@@ -36,7 +36,7 @@ get_indicators <- function(q='', order='', limit=25, offset=0, fields='', repres
 #' @param indicatorcode (string): an indicator code
 #' @import httr
 #' @examples
-#' get_indicators_code("AFILIACIONES")
+#' get_indicators_code("IPC")
 #' get_indicators_code("PARO_REGISTRADO")
 #' @export
 get_indicators_code <- function(indicatorcode) {
@@ -60,7 +60,7 @@ get_indicators_code <- function(indicatorcode) {
 #'   - codelists: mapping between codes and representations for each column.
 #' @import httr
 #' @examples
-#' get_indicators_code_data("AFILIACIONES")
+#' get_indicators_code_data("IPC")
 #' @export
 get_indicators_code_data <- function(indicatorcode, representation='', granularity='', fields='', as_dataframe=T) {
   path = paste('indicators', indicatorcode, 'data', sep = '/')
