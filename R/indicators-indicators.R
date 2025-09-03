@@ -36,8 +36,8 @@ get_indicators <- function(q='', order='', limit=25, offset=0, fields='', repres
 #' @param indicatorcode (string): an indicator code
 #' @import httr
 #' @examples
-#' get_indicators_code("IPC")
-#' get_indicators_code("PARO_REGISTRADO")
+#' get_indicators_code("IPI_BASE_2021")
+#' get_indicators_code("IPI")
 #' @export
 get_indicators_code <- function(indicatorcode) {
   path = paste('indicators', indicatorcode, sep = '/')

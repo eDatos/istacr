@@ -40,7 +40,7 @@ identifier and that also maintains a certain organization.
 \examples{
 get_statisticalresources_datasets_agency_resource_version(
 agencyid="ISTAC",
-resourceid="C00010A_000012",
-version="001.000",
-dim="TIME_PERIOD:2009")
+resourceid="E30050A_000007",
+version="~latest",
+dim="TIME_PERIOD:2025-M01:MEDIDAS:IPI_BASE_2021:TERRITORIO:ES70")
 }

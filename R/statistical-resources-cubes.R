@@ -81,9 +81,9 @@ get_statisticalresources_datasets_agency_resource <- function(agencyid, resource
 #' @examples
 #' get_statisticalresources_datasets_agency_resource_version(
 #' agencyid="ISTAC",
-#' resourceid="C00010A_000012",
-#' version="001.000",
-#' dim="TIME_PERIOD:2009")
+#' resourceid="E30050A_000007",
+#' version="~latest",
+#' dim="TIME_PERIOD:2025-M01:MEDIDAS:IPI_BASE_2021:TERRITORIO:ES70")
 #' @export
 get_statisticalresources_datasets_agency_resource_version <- function(agencyid, resourceid, version, dim='', fields='', lang='es', as_dataframe=T) {
   path = paste('datasets', agencyid, resourceid, version, sep = "/")
