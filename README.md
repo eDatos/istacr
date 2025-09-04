@@ -14,7 +14,7 @@ require(istacr)
 
 ## Usage
 
-[Refecence doc](./docs/usage.md)
+[Refecence doc](./man/docs/usage.md)
 
 ## Bugs/Requests
 
