@@ -2,7 +2,7 @@ Package: istacr
 Type: Package
 Title: Obtaining Open Data from Instituto Canario De Estadistica (ISTAC) API
 Version: 0.3.0
-Date: 2025-07-08
+Date: 2025-09-04
 Authors@R: c(
     person("Alberto", "Gonzalez", email = "jgonyanp@gobiernodecanarias.org", role = "cph"),
     person("Elisa", "Jorge", email = "ejorgon@gobiernodecanarias.org", role = c("aut","cre")
@@ -10,7 +10,7 @@ Authors@R: c(
   )
 Maintainer: Elisa Jorge <ejorgon@gobiernodecanarias.org>
 Description: You can access to open data published in Instituto Canario De Estadistica (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.
-License: GPL (>= 3) + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Imports: 
