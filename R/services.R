@@ -4,6 +4,9 @@ require(httr)
 
 API_ROOT_URL = 'https://datos.canarias.es/api/estadisticas/'
 API_VERSION = '1.0'
+# Change the API_KEY name to avoid confusion.
+# - The API_KEY content does not refer to an access token.
+# - It's actually used to redirect queries.
 ISTAC_API_KEY = 'dWcm6Nn4xVO3JyAsfnGMSg5Cm2lmDQpSj73vYAzLFuswu5X1fwbuGSXnB5iLaTiT'
 IBESTAT_API_KEY = 'ycpbugocdtSCeHYqVBkueEqipWyEQlY6KiviEPfKR2uDmvExY20eZm5VREyOM9P1'
 VALUE_ERROR = 'NaN'
