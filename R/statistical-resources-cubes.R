@@ -85,9 +85,9 @@ get_statisticalresources_datasets_agency_resource <- function(agencyid, resource
 #' version="~latest",
 #' dim="TIME_PERIOD:2025-M01:MEDIDAS:IPI_BASE_2021:TERRITORIO:ES70")
 #' @export
-get_statisticalresources_datasets_agency_resource_version <- function(agencyid, resourceid, version, dim='', fields='', lang='es', as_dataframe=T) {
+get_statisticalresources_datasets_agency_resource_version <- function(agencyid, resourceid, version, dim='', representation='', granularity='', fields='', lang='es', as_dataframe=T) {
   path = paste('datasets', agencyid, resourceid, version, sep = "/")
-  url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, query_list = list(dim=dim, fields=fields, lang=lang))
+  url = build_entrypoint_url(STATISTICAL_RESOURCES_API, path, query_list = list(dim=dim, representation=representation, granularity=granularity, fields=fields, lang=lang))
   api_response = get_content(url)
   if(as_dataframe) {
     return(build_resolved_api_response(api_response))
