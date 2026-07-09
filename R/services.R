@@ -3,8 +3,8 @@ require(utils)
 require(httr)
 
 .pkg_env <- new.env(parent = emptyenv())
+.pkg_env$api_root_url <- "https://datos.canarias.es/api/estadisticas/"
 
-API_ROOT_URL = 'https://datos.canarias.es/api/estadisticas/'
 API_VERSION = '1.0'
 # Change the API_KEY name to avoid confusion.
 # - The API_KEY content does not refer to an access token.
@@ -18,7 +18,7 @@ build_entrypoint_url <- function(api, path, query_list = list()) {
   #encoded_query <- URLdecode(query) TODO subs build_query
   urlpath = paste0('/', api, '/v', API_VERSION,'/', path, build_query(query_list))
 
-  paste0(API_ROOT_URL, urlpath)
+  paste0(.pkg_env$api_root_url, urlpath)
 }
 
 #' @importFrom utils URLencode
@@ -216,6 +216,6 @@ build_resolved_codelists_api_response <- function(api_response_list, lang) {
 }
 
 change_api_url <- function(api_root_url) {
-  API_ROOT_URL <<- api_root_url
-  return(API_ROOT_URL)
+  .pkg_env$api_root_url <- api_root_url
+  return(.pkg_env$api_root_url)
 }
