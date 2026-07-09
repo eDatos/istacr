@@ -200,6 +200,20 @@ build_resolved_codelists_api_response <- function(api_response_list, lang) {
   codelist
 }
 
+#' @title Change API root URL
+#' @description
+#' Changes the base URL used by the package to connect to a compatible
+#' statistics API. This allows switching between ISTAC, IBESTAT and any
+#' other institution implementing the same API.
+#'
+#' @param api_root_url Character string with the base URL of the target API.
+#'
+#' @return The configured API root URL.
+#'
+#' @examples
+#' change_api_url("https://ibestat.es/edatos/apis")
+#'
+#' @export
 change_api_url <- function(api_root_url) {
   .pkg_env$api_root_url <- api_root_url
   return(.pkg_env$api_root_url)

@@ -9,6 +9,8 @@ get_statisticalresources_datasets_agency_resource_version(
   resourceid,
   version,
   dim = "",
+  representation = "",
+  granularity = "",
   fields = "",
   lang = "es",
   as_dataframe = T
