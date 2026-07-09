@@ -9,6 +9,8 @@ get_statisticalresources_datasets_agency_resource_version(
   resourceid,
   version,
   dim = "",
+  representation = "",
+  granularity = "",
   fields = "",
   lang = "es",
   as_dataframe = T
@@ -21,15 +23,19 @@ get_statisticalresources_datasets_agency_resource_version(
 
 \item{version}{(string): Resource version. A possible value is \code{001.000}.}
 
-\item{dim}{(string): Allows filtering the data obtained in the response. A example is \code{TIME_PERIOD:2009|2010}.}
+\item{dim}{(string): Allows filtering the data obtained in the response. An example is \code{TIME_PERIOD:2009|2010}.}
+
+\item{representation}{(string): Specifies the representation format of the returned data. Leave empty to use the API default.}
+
+\item{granularity}{(string): Specifies the desired level of aggregation or granularity for the returned data. Leave empty to use the API default.}
 
 \item{fields}{(string): Allows you to customize the response by excluding fields from it. The possible values are \code{-metadata} and \code{-data}.}
 
 \item{lang}{(string): Language in which you want to get the answer.}
 
-\item{as_dataframe}{(bool): If True, this function returns a namedtuple with:
+\item{as_dataframe}{(bool): If TRUE, this function returns a list with:
 \itemize{
-\item dataframe: pandas dataframe built from API response.
+\item dataframe: data.frame built from the API response.
 \item codelists: mapping between codes and representations for each column.
 }}
 }
@@ -39,8 +45,9 @@ identifier and that also maintains a certain organization.
 }
 \examples{
 get_statisticalresources_datasets_agency_resource_version(
-agencyid="ISTAC",
-resourceid="E30050A_000007",
-version="~latest",
-dim="TIME_PERIOD:2025-M01:MEDIDAS:IPI_BASE_2021:TERRITORIO:ES70")
+  agencyid = "ISTAC",
+  resourceid = "E68025A_000007",
+  version = "~latest",
+  representation = "TIME_PERIOD[~last=1]:MEDIDAS[CASO_ACTIVO]:TERRITORIO[ES70]")$dataframe
+
 }
