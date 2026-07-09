@@ -4,8 +4,8 @@ require(httr)
 
 .pkg_env <- new.env(parent = emptyenv())
 .pkg_env$api_root_url <- "https://datos.canarias.es/api/estadisticas/"
+.pkg_env$api_version <- "1.0"
 
-API_VERSION = '1.0'
 # Change the API_KEY name to avoid confusion.
 # - The API_KEY content does not refer to an access token.
 # - It's actually used to redirect queries.
@@ -16,7 +16,7 @@ DEBUG = FALSE
 
 build_entrypoint_url <- function(api, path, query_list = list()) {
   #encoded_query <- URLdecode(query) TODO subs build_query
-  urlpath = paste0('/', api, '/v', API_VERSION,'/', path, build_query(query_list))
+  urlpath = paste0('/', api, '/v', .pkg_env$api_version ,'/', path, build_query(query_list))
 
   paste0(.pkg_env$api_root_url, urlpath)
 }
