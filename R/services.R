@@ -2,13 +2,15 @@ require(jsonlite)
 require(utils)
 require(httr)
 
+.pkg_env <- new.env(parent = emptyenv())
+
 API_ROOT_URL = 'https://datos.canarias.es/api/estadisticas/'
 API_VERSION = '1.0'
 # Change the API_KEY name to avoid confusion.
 # - The API_KEY content does not refer to an access token.
 # - It's actually used to redirect queries.
-ISTAC_API_KEY = 'dWcm6Nn4xVO3JyAsfnGMSg5Cm2lmDQpSj73vYAzLFuswu5X1fwbuGSXnB5iLaTiT'
-IBESTAT_API_KEY = 'ycpbugocdtSCeHYqVBkueEqipWyEQlY6KiviEPfKR2uDmvExY20eZm5VREyOM9P1'
+# ISTAC_API_KEY = 'dWcm6Nn4xVO3JyAsfnGMSg5Cm2lmDQpSj73vYAzLFuswu5X1fwbuGSXnB5iLaTiT'
+# IBESTAT_API_KEY = 'ycpbugocdtSCeHYqVBkueEqipWyEQlY6KiviEPfKR2uDmvExY20eZm5VREyOM9P1'
 VALUE_ERROR = 'NaN'
 DEBUG = FALSE
 
@@ -36,15 +38,31 @@ build_query <- function(query_list) {
   URLencode(result)
 }
 
+# get_api_key <- function(url) {
+#   api_key <- ""
+#   if(grepl("canarias", url, fixed=TRUE)) {
+#     api_key <- ISTAC_API_KEY
+#   }
+#   if(grepl("ibestat", url, fixed=TRUE)) {
+#     api_key <- IBESTAT_API_KEY
+#   }
+#   return(api_key)
+# }
+
 get_api_key <- function(url) {
+
   api_key <- ""
-  if(grepl("canarias", url, fixed=TRUE)) {
-    api_key <- ISTAC_API_KEY
+
+  if (grepl("canarias", url, fixed = TRUE)) {
+    api_key <- .api_keys$canarias
   }
-  if(grepl("ibestat", url, fixed=TRUE)) {
-    api_key <- IBESTAT_API_KEY
+
+  if (grepl("ibestat", url, fixed = TRUE)) {
+    api_key <- .api_keys$ibestat
   }
-  return(api_key)
+
+  api_key
+
 }
 
 get_content <- function(url) {
