@@ -211,7 +211,7 @@ build_resolved_codelists_api_response <- function(api_response_list, lang) {
 #' @return The configured API root URL.
 #'
 #' @examples
-#' change_api_url("https://ibestat.es/edatos/apis")
+#' change_api_url("https://datos.canarias.es/api/estadisticas/")
 #'
 #' @export
 change_api_url <- function(api_root_url) {
